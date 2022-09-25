@@ -27,6 +27,9 @@ dependencies {
     // flyway
     implementation 'org.flywaydb:flyway-core:9.3.1'
 
+    // Jsoup
+    implementation 'org.jsoup:jsoup:1.14.3'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
