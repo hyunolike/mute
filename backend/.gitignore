@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### Docker Compose ###
-.volumes
+/volumes
