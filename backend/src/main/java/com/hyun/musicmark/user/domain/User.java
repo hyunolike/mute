@@ -1,6 +1,7 @@
 package com.hyun.musicmark.user.domain;
 
 import com.hyun.musicmark.auth.domain.Authority;
+import com.hyun.musicmark.music.domain.SearchWord;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -30,6 +33,9 @@ public class User implements UserDetails {
     private Set<Authority> authorities = new java.util.LinkedHashSet<>();
 
     private boolean enabled;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<SearchWord> searchWords = new ArrayList<>();
 
     public Set<Authority> getAuthorities() {
         return authorities;
@@ -57,5 +63,12 @@ public class User implements UserDetails {
     @Override
     public boolean isCredentialsNonExpired() {
         return enabled;
+    }
+
+    public SearchWord addSearchWord(SearchWord searchWord){
+        searchWord.setUser(this);
+        searchWords.add(searchWord);
+
+        return searchWord;
     }
 }

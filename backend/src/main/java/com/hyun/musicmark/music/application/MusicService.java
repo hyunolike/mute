@@ -1,33 +1,62 @@
 package com.hyun.musicmark.music.application;
 
+import com.hyun.musicmark.music.domain.SearchWord;
+import com.hyun.musicmark.music.domain.SearchWordRepository;
 import com.hyun.musicmark.music.ui.dto.MusicInfo;
+import com.hyun.musicmark.music.ui.dto.SearchInfo;
 import com.hyun.musicmark.music.ui.dto.SearchMusicInfo;
 import com.hyun.musicmark.music.ui.dto.SearchMusicInfoResponse;
+import com.hyun.musicmark.user.domain.User;
+import com.hyun.musicmark.user.domain.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
- * 1. vibe
- * 가수 검색: https://apis.naver.com/vibeWeb/musicapiweb/v3/search/artist?query=
- * 트랙 검색: https://apis.naver.com/vibeWeb/musicapiweb/v3/search/track?query=
+ * <p>
+ * <h3>1. vibe</h3>
+ * 가수 검색: https://apis.naver.com/vibeWeb/musicapiweb/v3/search/artist?query= <br>
+ * 트랙 검색: https://apis.naver.com/vibeWeb/musicapiweb/v3/search/track?query= <br>
  * 앨범 검색: https://apis.naver.com/vibeWeb/musicapiweb/v3/search/album?query=
- *
- * 2. bugs
- * 트랙 검색(가사 정보 포함): https://music.bugs.co.kr/track/[트랙id]
+ * </p>
+ * <p>
+ * <h3>2. bugs</h3>
+ * 트랙 검색(가사 정보 포함): https://music.bugs.co.kr/track/[트랙id] <br>
  * 앨범 검색: https://music.bugs.co.kr/album/[앨범id]
+ * </p>
  */
 
 @Service
+@RequiredArgsConstructor
 public class MusicService {
 
+    private final UserRepository userRepository;
+    private final SearchWordRepository searchWordRepository;
+
     public SearchMusicInfoResponse searchMusicInfo(String articleName) throws IOException {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        UserDetails userDetails = (UserDetails) principal;
+
+        Optional<User> user = userRepository.findUserByEmail(userDetails.getUsername());
+
+        SearchWord searchWord = SearchWord.builder().search_word(articleName).build();
+        searchWordRepository.save(user.get().addSearchWord(searchWord));
+
+        if(user.isPresent()){
+            user.get().addSearchWord(SearchWord.builder().search_word(articleName).build());
+        }
+
         String url = "https://apis.naver.com/vibeWeb/musicapiweb/v3/search/track?query="
                 + articleName
                 + "&start=1&display=100&sort=RELEVANCE";
@@ -48,6 +77,9 @@ public class MusicService {
         return musicInfoResponse;
     }
 
+    /**
+     * String articleName: 음악 + 가수명
+     */
     public MusicInfo bringMusicInfo(String articleName) throws IOException {
         String requestUrl = "https://music.bugs.co.kr/search/lyrics?q=" + articleName;
         Document requestDoc = Jsoup.connect(requestUrl).get();
@@ -73,5 +105,11 @@ public class MusicService {
         return musicInfo;
     }
 
+    public SearchInfo bringMusicHistoryList(Long userId){
+        Optional<User> user = userRepository.findById(userId);
 
+        return SearchInfo.builder().searchWords(user.get().getSearchWords().stream()
+                .map(artistName -> artistName.getSearch_word())
+                .collect(Collectors.toList())).build();
+    }
 }

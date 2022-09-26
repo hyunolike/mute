@@ -2,6 +2,7 @@ package com.hyun.musicmark.music.ui;
 
 import com.hyun.musicmark.music.application.MusicService;
 import com.hyun.musicmark.music.ui.dto.MusicInfo;
+import com.hyun.musicmark.music.ui.dto.SearchInfo;
 import com.hyun.musicmark.music.ui.dto.SearchMusicInfoResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,8 @@ public class MusicController {
     }
 
     @GetMapping("/search/{user-id}")
-    public void searchMusicHistoryList(@PathVariable(name = "user-id") Long userId){
-
+    public SearchInfo searchMusicHistoryList(@PathVariable(name = "user-id") Long userId){
+        return musicService.bringMusicHistoryList(userId);
     }
 
     @DeleteMapping("/search/{user-id}")
@@ -34,5 +35,4 @@ public class MusicController {
     public MusicInfo bringMusicInfo(@PathVariable(name = "article-name") String articleName) throws IOException {
         return musicService.bringMusicInfo(articleName);
     }
-
 }
