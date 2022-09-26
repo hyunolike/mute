@@ -30,6 +30,9 @@ dependencies {
     // Jsoup
     implementation 'org.jsoup:jsoup:1.14.3'
 
+    //Swagger
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

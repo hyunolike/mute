@@ -14,6 +14,9 @@ spring:
     baseline-on-migrate: true          # flyway_schema_history 테이블을 자동으로 생성할지 여부
     baseline-version: 0                # 최초 버전 정보
     enabled: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 server:
   port: 9061
 
