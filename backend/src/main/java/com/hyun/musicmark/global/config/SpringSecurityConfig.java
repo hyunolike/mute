@@ -17,7 +17,6 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserService;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -54,6 +53,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .cors().and().csrf().disable()
                 .formLogin()
                 .and()
                 .authorizeRequests(authorizeRequest -> authorizeRequest
@@ -105,27 +105,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                                                                 new UsernamePasswordAuthenticationToken(user, "", user.getAuthorities())
                                                         );
                                                     }
-                                                    System.out.println(authentication.getAuthorities());
-                                                    System.out.println(authentication.getDetails());
-                                                    System.out.println(authentication.getCredentials());
-                                                    System.out.println(authentication.getPrincipal());
-                                                    System.out.println(authentication.getName());
-                                                    System.out.println("----");
-                                                    System.out.println(((OAuth2User) principal).getAttributes());
-                                                    System.out.println(((OAuth2User) principal).getName());
-                                                    System.out.println(((OAuth2User) principal).getAuthorities().getClass().getName());
-                                                    System.out.println(request.getAuthType());
-                                                    System.out.println(response.getTrailerFields());
-//                                                    request.getRequestDispatcher("/").forward(request, response);
                                                 }
                                                 response.sendRedirect("/home");
 
                                             }
                                         })
-
-//                        .and()
-//                        .addFilterAfter(userTranslateFilter, OAuth2LoginAuthenticationFilter.class
-
                 ).logout()
 
 
