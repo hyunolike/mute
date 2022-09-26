@@ -112,4 +112,8 @@ public class MusicService {
                 .map(artistName -> artistName.getSearch_word())
                 .collect(Collectors.toList())).build();
     }
+
+    public void deleteAllSearchHistory(Long userId){
+        searchWordRepository.deleteByAll(userId);
+    }
 }

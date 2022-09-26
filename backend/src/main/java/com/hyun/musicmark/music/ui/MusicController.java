@@ -27,9 +27,14 @@ public class MusicController {
     }
 
     @DeleteMapping("/search/{user-id}")
-    public void deleteSearchMusicHistory(@PathVariable(name = "user-id") Long userId){
-
+    public void deleteAllSearchMusicHistory(@PathVariable(name = "user-id") Long userId){
+        musicService.deleteAllSearchHistory(userId);
     }
+
+//    @DeleteMapping("/search/{user-id}")
+//    public void deleteSearchMusicHistory(){
+//
+//    }
 
     @GetMapping("/music-info/{article-name}")
     public MusicInfo bringMusicInfo(@PathVariable(name = "article-name") String articleName) throws IOException {
