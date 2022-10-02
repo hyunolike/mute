@@ -1,6 +1,7 @@
 package com.hyun.musicmark.user.domain;
 
 import com.hyun.musicmark.auth.domain.Authority;
+import com.hyun.musicmark.memo.domain.MusicMark;
 import com.hyun.musicmark.music.domain.SearchWord;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -36,6 +38,9 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<SearchWord> searchWords = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<MusicMark> musicMarks = new ArrayList<>();
 
     public Set<Authority> getAuthorities() {
         return authorities;
@@ -70,5 +75,21 @@ public class User implements UserDetails {
         searchWords.add(searchWord);
 
         return searchWord;
+    }
+
+    public MusicMark addMusicMark(MusicMark musicMark){
+        musicMark.setUser(this);
+        musicMarks.add(musicMark);
+
+        return musicMark;
+    }
+
+    public void deleteMemo(Long memoId){
+        Iterator<MusicMark> iterator = musicMarks.iterator();
+        while(iterator.hasNext()){
+            if(iterator.next().getMemo_id().equals(memoId)) {
+                iterator.remove();
+            }
+        }
     }
 }
