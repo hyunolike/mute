@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
-@Api(tags = {"음악 검색 및 정보를 제공하는 API"})
+@Api(tags = {"[Mute] 음악 검색 및 정보를 제공하는 API"})
 @RestController
 @RequestMapping("/api") // TODO: 릴리즈 시 api >> v1 변경
 @RequiredArgsConstructor

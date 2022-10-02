@@ -5,6 +5,7 @@ import com.hyun.musicmark.auth.domain.Oauth2User;
 import com.hyun.musicmark.auth.domain.Oauth2UserRepository;
 import com.hyun.musicmark.user.domain.User;
 import com.hyun.musicmark.user.domain.UserRepository;
+import com.hyun.musicmark.user.ui.dto.MypageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -85,5 +86,15 @@ public class UserService implements UserDetailsService {
             return oauth2UserRepository.save(oauth2User);
         });
         return userRepository.findById(user.getUserId()).get();
+    }
+
+    // 마이페이지 서비스
+    public MypageInfo bringUserInfo(Long userId){
+        Optional<User> user = userRepository.findById(userId);
+
+        return MypageInfo.builder()
+                .email(user.get().getEmail())
+                .musicmark_count(user.get().getMusicMarks().size())
+                .build();
     }
 }
