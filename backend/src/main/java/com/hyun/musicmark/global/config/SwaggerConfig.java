@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private static final String API_NAME = "뮤직마크 프로젝트 with 황현지, 장현호";
+    private static final String API_NAME = "Mute with 황현지, 장현호";
     private static final String API_VERSION = "0.0.1";
     private static final String API_DESCRIPTION = "뮤직마크 프로젝트 명세서";
 
