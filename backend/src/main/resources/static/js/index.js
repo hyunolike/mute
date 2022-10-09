@@ -19,6 +19,7 @@ function getSearchApi() {
         count += 1;
         bringData(count);
         observerLastEle();
+        observer.unobserve(entry.target); //스크롤 위로 움직일때는 요청하지 않도록하는 기능
     };
 
     const infScrollObserver = new IntersectionObserver(infScrollCallback, {})
