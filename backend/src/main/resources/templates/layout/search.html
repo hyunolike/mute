@@ -1,0 +1,9 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div id=search-bar th:fragment="search">
+    <div id="form">
+        <input id="search-name" type="text" placeholder="검색어를 입력하세요." name="article-name" value="">
+        <button id="search-submit" onclick="getSearchApi()">검색할래</button>
+    </div>
+</div>
+</html>

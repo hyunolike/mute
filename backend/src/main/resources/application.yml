@@ -27,6 +27,8 @@ spring:
           content:
             enabled: true
             paths: /**
+  thymeleaf3:
+    decoupled-logic: true
 server:
   port: 9061
 
