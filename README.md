@@ -3,7 +3,7 @@
 </p>
 
 ## 👩‍👦구성원 
-|  [황현지](https://github.com/gwangyeol-im)  |  [장현호](https://github.com/dudtjr913)  | 
+|  [황현지](https://github.com/ghkdgus0716)  |  [장현호](https://github.com/hyunolike)  | 
 | :----------: |  :--------:  |  
 | <img src="https://avatars.githubusercontent.com/ghkdgus0716" width=200px alt="황현지"/>  | <img src="https://avatars.githubusercontent.com/hyunolike" width=200px alt="장현호"/> |
 |기획 & 디자인 & 퍼블리싱 담당🌠|프론트엔드 & 백엔드 담당🌃|
