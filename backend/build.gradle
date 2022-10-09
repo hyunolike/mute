@@ -33,6 +33,9 @@ dependencies {
     //Swagger
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
 
+    // Thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

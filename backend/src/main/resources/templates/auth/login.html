@@ -1,0 +1,64 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    브라우저 정책 해결을 위한 시도  -->
+<!--    <meta http-equiv="Content-Security-Policy" content= "script-src 'unsafe-inline' 'sha256-mc9LH2e3kV1BBF1B3icEq0dR656rD3pdHToRTsWEQTI=';">-->
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/splash.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" th:src="@{/js/splash.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    <title>Mute</title>
+</head>
+<body>
+    <div id="splash-screen">
+        <div id="splash-logo">
+            <img src="../img/logo.svg" alt="">
+        </div>
+    </div>
+
+    <div class="main" style="position: relative !important;">
+        <div id="mute-logo-screen">
+            <div id="mute-logo"></div>
+        </div>
+        <div id="login">
+            <div id="login-title">
+                로그인
+            </div>
+            <div id="login-bar">
+                <img src="../img/login-bar.svg" alt="">
+            </div>
+            <div class="oauth-login" >
+                <button class="kakaoBtn" type="button" onclick="location.href='/oauth2/authorization/kakao'">
+                    <div class="iconKakao"><img src="../img/kakao-icon.svg" alt=""></div>
+                    <div class="login-btn">
+                        카카오 로그인
+                    </div>
+                </button>
+                <button class="naverBtn"type="button" onclick="location.href='/oauth2/authorization/naver'">
+                    <div class="iconNaver"><img src="../img/naver-icon.svg" alt=""></div>
+                    <div class="login-btn">
+                        네이버 로그인
+                    </div>
+                </button>
+                <button class="facebookBtn"type="button" onclick="location.href='/oauth2/authorization/facebook'">
+                    <div class="iconFacebook"><img src="../img/facebook-icon.svg" alt=""></div>
+                    <div class="login-btn">
+                        페이스북 로그인
+                    </div>
+                </button>
+                <button class="googleBtn" type="button" onclick="location.href='/oauth2/authorization/google'">
+                    <div class="iconGoogle"><img src="../img/google-icon.svg" alt=""></div>
+                    <div class="login-btn">
+                        구글 로그인
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

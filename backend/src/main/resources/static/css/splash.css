@@ -1,0 +1,25 @@
+#splash-screen {
+    position: fixed;
+    background-color: #222222;
+    transition: all ease-in-out 600ms;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#splash-logo {
+    opacity: 1;
+    background-color: #222222;
+    height: 100%;
+    text-align: center;
+    margin-top: 25rem;
+}
+
+.fade{
+    transition: .5s;
+    display: none;
+}

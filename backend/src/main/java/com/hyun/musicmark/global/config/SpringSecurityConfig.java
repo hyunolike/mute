@@ -9,6 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
@@ -20,6 +21,9 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -50,16 +54,38 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     DaoAuthenticationProvider daoAuthenticationProvider;
 
+    /**
+     * <h3>CSP</h3>
+     * default-src 'self';
+     * script-src 'report-sample' 'self';
+     * style-src 'report-sample' 'self';
+     * object-src 'none';
+     * base-uri 'self';
+     * connect-src 'self';
+     * font-src 'self';
+     * frame-src 'self';
+     * img-src 'self';
+     * manifest-src 'self';
+     * media-src 'self';
+     * report-uri https://63395d02ef389e2c712260ae.endpoint.csper.io/?v=1;
+     * worker-src 'none';
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .cors().and().csrf().disable()
-                .formLogin()
+                .httpBasic().disable()
+                .cors().configurationSource(corsConfigurationSource())
                 .and()
-                .authorizeRequests(authorizeRequest -> authorizeRequest
-                        .mvcMatchers("/home").permitAll()
-                        .anyRequest().authenticated())
-//                .formLogin().and()
+                .csrf().disable()
+                .headers().frameOptions().disable()
+                .xssProtection();
+        http
+                .authorizeRequests()
+                .mvcMatchers("/", "login").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .oauth2Login().loginPage("/login")
+                .and()
                 .oauth2Login(
                         oauth2->
                                 oauth2.userInfoEndpoint(userInfo->
@@ -107,12 +133,29 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                                                     }
                                                 }
                                                 response.sendRedirect("/home");
-
                                             }
                                         })
-                ).logout()
-
-
+                )
+                .logout();
         ;
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.addAllowedHeader("*");
+        corsConfiguration.addAllowedMethod("*");
+        corsConfiguration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfiguration);
+        return source;
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**");
     }
 }

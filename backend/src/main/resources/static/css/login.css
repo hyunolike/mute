@@ -1,0 +1,100 @@
+#mute-logo-screen{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mute-logo{
+    background-color: #222222;
+    background-repeat: no-repeat;
+    background-image: url("../img/logo.svg");
+    width: 149.72px;
+    height: 33.92px;
+}
+
+#login{
+    height: 50%;
+    text-align: center;
+}
+
+#login-title{
+    font-size: 1.5em;
+    height: 2rem;
+    font-size: 24px;
+    color: #fff;
+}
+
+#login-bar{
+    height: 2rem;
+}
+
+.login-btn{
+    width: 65%;
+}
+
+.kakaoBtn{
+    background-color: #FFEB32;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    margin: auto;
+    width: 18rem;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+}
+
+.iconKakao{
+    width: 20%;
+}
+
+.naverBtn{
+    background-color: #45C91C;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    margin: .5rem auto auto auto;
+    width: 18rem;
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+}
+
+.iconNaver{
+    width: 20%;
+}
+
+.facebookBtn{
+    background-color: #2875DD;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    margin: .5rem auto auto auto;
+    width: 18rem;
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+}
+
+.iconFacebook{
+    width: 20%;
+}
+
+.googleBtn{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    margin: .5rem auto auto auto;
+    width: 18rem;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+}
+
+.iconGoogle {
+    width: 20%;
+}
