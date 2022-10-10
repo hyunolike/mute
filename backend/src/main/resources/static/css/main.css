@@ -154,33 +154,6 @@ body {
         height: 100vh;
         width: 100vw;
     }
-    header img {
-        width: 20rem;
-    }
-    footer {
-
-    }
-    #search-bar #search-name{
-        font-size: 3rem;
-    }
-    #search-bar #search-submit{
-        font-size: 3rem;
-    }
-    #home-page #title{
-        font-size: 5rem;
-    }
-    #mute-memo-list #memo-item .item{
-        padding-top: 2rem;
-    }
-    #mute-memo-list #memo-item .item img{
-        width: 27rem;
-    }
-    #mute-memo-list #memo-item .item .item-title{
-        font-size: 4rem;
-    }
-    #mute-memo-list #memo-item .item .item-singer{
-        font-size: 2.5rem;
-    }
 }
 
 /* Portrait */
