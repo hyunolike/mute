@@ -32,4 +32,8 @@ public class MusicMark {
     private MusicMarkFolerType musicMarkFolerType;
 
     private String album_url;
+
+    private String music_name;
+
+    private String singer;
 }
