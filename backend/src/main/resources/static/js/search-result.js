@@ -5,7 +5,7 @@
  * 1. 검색어 입력 후, 버튼 클릭
  * 2. 입력값의 값 가져와서 div 생성
  * 3. axios 이용해서 데이터 전체 리스트 가져오기
- * 4. 페이지닝?? 어떻게??
+ * 4. 페이지닝?? 어떻게?? - 자바스크립트 페이지 처리
  */
 
 const currentURL = window.location.href;
@@ -28,7 +28,7 @@ function getSearchApi() {
     const searchResultList = document.getElementById('search-result-list');
 
     searchHistoryList.style.display = "none";
-    searchResultList.style.display = "";
+    searchResultList.style.display = "block";
 
 
     // bringData();
