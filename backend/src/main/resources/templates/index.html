@@ -2,9 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-<!--    <meta name="viewport"-->
-<!--          content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,
+  maximum-scale=1.0, minimum-scale=1.0">
     <title>Mute</title>
     <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css"/>
@@ -32,4 +31,6 @@
         <footer th:replace="footer :: footer"></footer>
     </div>
 </body>
+<!-- html tag 인식을 위한 위치 조정 -->
+<script type="text/javascript" th:src="@{/js/search-result.js}"></script>
 </html>
