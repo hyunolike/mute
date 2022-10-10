@@ -1,0 +1,13 @@
+#search-result-page{
+    height: 70%;
+    background-color: coral;
+}
+
+#search-history-list{
+
+}
+
+#search-history-list{
+    /* 하나의 페이지에서 2개의 div 요소 보여주기 위한 초기 설정값 */
+    display: none;
+}

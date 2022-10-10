@@ -1,6 +1,4 @@
-function getSearchApi() {
-    // const getSearchName = document.getElementById("search-name").value;
-
+function getMemoApi() {
     var count = 0;
 
     // 브라우저 시작 시 10개의 데이터 가져옴
@@ -27,17 +25,6 @@ function getSearchApi() {
         infScrollObserver.observe(getLastEle());
     }
 
-    // function bringData(count){
-    //     axios.get('http://localhost:9061/api/', {
-    //         params: {
-    //             "article-name": getSearchName
-    //         }
-    //     }).then(function (res) {
-    //         $('<div class="item">' + '<h2>' + res.data.musics[count].music_name + '</h2>' + '<img src="' + res.data.musics[count].album_url + '"/>' + '</div>').appendTo('#memo-item');
-    //         observerLastEle();
-    //     })
-    // }
-
     function bringData(count){
         axios.get('http://localhost:9061/api/musicmark')
             .then(function (res) {
@@ -47,4 +34,4 @@ function getSearchApi() {
     }
 }
 
-getSearchApi();
+getMemoApi();
