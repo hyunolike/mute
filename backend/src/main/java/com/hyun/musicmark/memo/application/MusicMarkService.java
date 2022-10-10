@@ -34,6 +34,9 @@ public class MusicMarkService {
                 .track_id(musicMarkRequest.getTrack_id())
                 .mark_info(musicMarkRequest.getMark_info())
                 .memo(musicMarkRequest.getMemo())
+                .album_url(musicMarkRequest.getAlbum_url())
+                .music_name(musicMarkRequest.getMusic_name())
+                .singer(musicMarkRequest.getSinger())
                 .musicMarkFolerType(MusicMarkFolerType.setting())
                 .build();
 
@@ -59,6 +62,8 @@ public class MusicMarkService {
                     .mark_info(musicMark.get().getMark_info())
                     .track_id(musicMark.get().getTrack_id())
                     .memo(musicMark.get().getMemo())
+                    .music_name(musicMarkInfo.getMusic_name())
+                    .singer(musicMarkInfo.getSinger())
                     .build();
         }
 
@@ -75,6 +80,8 @@ public class MusicMarkService {
                         .mark_info(musicMark.getMark_info())
                         .memo(musicMark.getMemo())
                         .track_id(musicMark.getTrack_id())
+                        .singer(musicMark.getSinger())
+                        .music_name(musicMark.getMusic_name())
                         .build()).collect(Collectors.toList());
 
         return MusicMarkListInfo.builder().musicmark_list(musicMarkInfo).build();

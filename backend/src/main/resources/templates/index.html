@@ -2,22 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
     <title>Mute</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
 </head>
 <body>
-    <h1>splash</h1>
+    <div class="main">
+        <header th:replace="header :: header"></header>
+        <div th:replace="layout/search :: search"></div>
+        <div id="home-page">
+            <div id="title">
+                최근 추가한 노래
+            </div>
+            <div id="mute-memo-list">
+                <div id="memo-item">
+
+                </div>
+            </div>
+        </div>
+        <footer th:replace="footer :: footer"></footer>
+    </div>
 </body>
 </html>
-
-
-Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval'". Either the 'unsafe-inline' keyword, a hash ('sha256-mc9LH2e3kV1BBF1B3icEq0dR656rD3pdHToRTsWEQTI='), or a nonce ('nonce-...') is required to enable inline execution.
-
-syLt @ content_start.js:150
-BEWy @ content_start.js:136
-YUWZ @ content_start.js:108
-cTXc @ content_start.js:168
-mKFS @ content_start.js:262
-cYUN @ content_start.js:214
-Sypg @ content_start.js:236
-obHo @ content_start.js:277
-(anonymous) @ content_start.js:283
