@@ -1,21 +1,3 @@
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    background-color: red;
-}
-
-footer {
-    height: 10%;
-    background-color: #45C91C;
-}
-
-#search-bar {
-    height: 10%;
-    background-color: #FFEB32;
-}
-
 #home-page{
     height: 70%;
     background-color: coral;

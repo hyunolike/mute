@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,
+  maximum-scale=1.0, minimum-scale=1.0">
+    <title>Mute</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/search.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/search-result.css}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/search-result.js}"></script>
+</head>
+<body>
+<div class="main">
+    <header th:replace="header :: header"></header>
+    <div th:replace="layout/search :: search"></div>
+    <div id="search-result-page">
+        <div id="search-value">
+
+        </div>
+        <div id="search-history-list">
+            검색 히스토리 리스트
+        </div>
+        <div id="search-result-list">
+            검색 결과 리스트
+            <div id="view-list">
+
+            </div>
+            <ul id="paging">
+
+            </ul>
+            <div id="displayCount">
+
+            </div>
+        </div>
+    </div>
+    <footer th:replace="footer :: footer"></footer>
+
+    <!--  검색 히스토리 값 전달을 위한 자바스크립트 인라인 코드  -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var userId = [[${userId}]];
+
+        axios.get('http://localhost:9061/api/search/' + userId)
+            .then(function (res) {
+                var totalData = res.data.searchWords.length;
+                console.log(`totalData: ${totalData}`);
+
+                for(var i=0; i<totalData; i++){
+                    $('<div class="item">' + '<h2>' + res.data.searchWords[i] + '</h2>' + '</div>').appendTo('#search-history-list');
+                }
+            })
+        /*]]>*/
+    </script>
+</div>
+</body>
+</html>

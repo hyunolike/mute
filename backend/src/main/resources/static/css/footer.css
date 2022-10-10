@@ -1,0 +1,10 @@
+footer {
+    height: 10%;
+    background-color: #45C91C;
+}
+
+footer #nav{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
