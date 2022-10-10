@@ -30,6 +30,23 @@
         </div>
     </div>
     <footer th:replace="footer :: footer"></footer>
+
+    <!--  검색 히스토리 값 전달을 위한 자바스크립트 인라인 코드  -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var userId = [[${userId}]];
+
+        axios.get('http://localhost:9061/api/search/' + userId)
+            .then(function (res) {
+                var totalData = res.data.searchWords.length;
+                console.log(`totalData: ${totalData}`);
+
+                for(var i=0; i<totalData; i++){
+                    $('<div class="item">' + '<h2>' + res.data.searchWords[i] + '</h2>' + '</div>').appendTo('#search-history-list');
+                }
+            })
+        /*]]>*/
+    </script>
 </div>
 </body>
 </html>

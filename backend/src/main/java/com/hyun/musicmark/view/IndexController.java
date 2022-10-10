@@ -1,14 +1,16 @@
 package com.hyun.musicmark.view;
 
+import com.hyun.musicmark.user.domain.User;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.security.Principal;
 
 @Controller
 public class IndexController {
-
     @GetMapping("/")
     public String testPage(){
         return "index";
@@ -32,7 +34,9 @@ public class IndexController {
      */
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/search")
-    public String bringSearchResultPage(){
+    public String bringSearchResultPage(@AuthenticationPrincipal User user, Model model){
+        model.addAttribute("userId", user.getUserId());
+
         return "/search/search-result";
     }
 }
