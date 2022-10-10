@@ -41,4 +41,12 @@ footer {
 #memo-item{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    place-items: center;
 }
+#memo-item .item{
+    padding-top: 0.6rem;
+}
+#memo-item .item img{
+    width: 10rem;
+}
+

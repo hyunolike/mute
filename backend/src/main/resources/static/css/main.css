@@ -169,6 +169,18 @@ body {
     #home-page #title{
         font-size: 5rem;
     }
+    #mute-memo-list #memo-item .item{
+        padding-top: 2rem;
+    }
+    #mute-memo-list #memo-item .item img{
+        width: 27rem;
+    }
+    #mute-memo-list #memo-item .item .item-title{
+        font-size: 4rem;
+    }
+    #mute-memo-list #memo-item .item .item-singer{
+        font-size: 2.5rem;
+    }
 }
 
 /* Portrait */
