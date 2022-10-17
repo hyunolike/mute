@@ -8,3 +8,14 @@ footer #nav{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
+footer button{
+    border: none;
+    background: #1B1B1B;
+    height: 100%;
+    width: 100%;
+}
+
+footer img{
+    width: 2.5rem;
+}

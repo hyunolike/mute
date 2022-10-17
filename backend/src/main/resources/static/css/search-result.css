@@ -1,10 +1,39 @@
 #search-result-page{
     height: 70%;
-    background-color: coral;
+    background: #1B1B1B;
 }
 
 #search-history-list{
+    overflow: auto;
+    height: 100%;
+    padding-left: 1rem;
+}
 
+#search-history-title{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 1rem 0;
+}
+
+#history-title{
+    display: flex;
+    align-items: center;
+    color: #888888;
+}
+
+#search-history-title button{
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: smaller;
+    color: #888888;
+    background: #1B1B1B;
+}
+
+#search-history-list .item{
+    font-size: large;
+    color: #fff;
+    margin-top: 1rem;
 }
 
 #search-result-list{

@@ -23,7 +23,13 @@
 
         </div>
         <div id="search-history-list">
-            검색 히스토리 리스트
+            <div id="search-history-title">
+                <div id="history-title">최근 검색어</div>
+                <button onclick="deleteAllHistory()">
+                    <div>전체 삭제</div>
+                    <img src="../img/delete.svg" alt="" />
+                </button>
+            </div>
         </div>
         <div id="search-result-list">
             검색 결과 리스트
@@ -51,9 +57,15 @@
                 console.log(`totalData: ${totalData}`);
 
                 for(var i=0; i<totalData; i++){
-                    $('<div class="item">' + '<h2>' + res.data.searchWords[i] + '</h2>' + '</div>').appendTo('#search-history-list');
+                    $('<div class="item">' + '<div>' + res.data.searchWords[i] + '</div>' + '</div>').appendTo('#search-history-list');
                 }
             })
+
+        function deleteAllHistory(){
+            axios.delete('http://localhost:9061/api/search/' + userId);
+
+            $('.item').remove();
+        }
         /*]]>*/
     </script>
 </div>
