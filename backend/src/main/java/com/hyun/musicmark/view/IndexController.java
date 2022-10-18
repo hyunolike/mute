@@ -39,4 +39,10 @@ public class IndexController {
 
         return "/search/search-result";
     }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/music-info")
+    public String bringMusicInfoResultPage(){
+        return "/search/search-detail-result";
+    }
 }

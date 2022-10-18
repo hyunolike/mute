@@ -1,0 +1,13 @@
+header {
+    height: 10%;
+    background: #1B1B1B;
+}
+
+#header-search-title{
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #fff;
+    padding-left: 1rem;
+    padding-top: 2rem;
+}

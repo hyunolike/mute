@@ -1,23 +1,18 @@
 #home-page{
     height: 70%;
-    background-color: coral;
-}
-
-#search-bar #search-name{
-    float: left;
-}
-
-#search-bar #search-submit{
-    float: right;
+    background: #1B1B1B;
 }
 #title{
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    font-weight: bold;
     font-size: 1.5rem;
-    background: aqua;
     height: 10%;
 }
 #mute-memo-list{
     overflow: auto;
-    background: grey;
     height: 90%;
 }
 #memo-item{
@@ -31,4 +26,16 @@
 #memo-item .item img{
     width: 10rem;
 }
+
+#memo-item .item .item-title{
+    font-size: larger;
+    color: #fff;
+}
+
+#memo-item .item .item-singer{
+    font-size: medium;
+    color: #555;
+}
+
+
 

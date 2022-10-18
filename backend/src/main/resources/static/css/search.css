@@ -1,4 +1,29 @@
 #search-bar {
     height: 10%;
-    background-color: #FFEB32;
+}
+
+#form{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    height: 100%;
+}
+
+#search-bar #search-name{
+    background: #1B1B1B;
+    float: left;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    color: #fff;
+}
+
+#search-bar #search-submit{
+    background: #1B1B1B;
+    float: right;
+    border: none;
+}
+
+input:focus{
+    outline: none;
 }

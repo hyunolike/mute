@@ -2,18 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <footer th:fragment="footer">
     <div id="nav">
-        <div id="main-page" style="background-color: red">
-            <button>메인 홈</button>
+        <div id="main-page">
+            <button onclick="goHome()">
+                <img id="main-page-img" src="../img/footer/home.svg" alt=""
+                    onmouseover="this.src='../img/footer/home-mouseover.svg'"
+                     onmouseout="this.src='../img/footer/home.svg'"
+                >
+            </button>
         </div>
-        <div id="search-page" style="background-color: #2875DD">
-            <button>검색 홈</button>
+        <div id="search-page">
+            <button onclick="goSearch()">
+                <img id="search-page-img" src="../img/footer/search.svg" alt=""
+                     onmouseover="this.src='../img/footer/search-mouseover.svg'"
+                     onmouseout="this.src='../img/footer/search.svg'"
+                >
+            </button>
         </div>
-        <div id="memo-page" style="background-color: #FFEB32">
-            <button>메모 홈</button>
+        <div id="memo-page">
+            <button>
+                <img src="../img/footer/library_books.svg" alt=""
+                     onmouseover="this.src='../img/footer/library-books-mouseover.svg'"
+                     onmouseout="this.src='../img/footer/library_books.svg'"
+                >
+            </button>
         </div>
-        <div id="setting-page" style="background-color: blue">
-            <button>설정 홈</button>
+        <div id="setting-page">
+            <button>
+                <img src="../img/footer/settings.svg" alt=""
+                     onmouseover="this.src='../img/footer/settings-mouseover.svg'"
+                     onmouseout="this.src='../img/footer/settings.svg'"
+                >
+            </button>
         </div>
     </div>
+    <script type="text/javascript">
+        function goHome(){
+            window.location.replace("http://localhost:9061/home")
+        }
+
+        function goSearch(){
+            window.location.replace("http://localhost:9061/search")
+        }
+    </script>
 </footer>
 </html>

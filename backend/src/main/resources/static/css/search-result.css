@@ -1,13 +1,100 @@
 #search-result-page{
     height: 70%;
-    background-color: coral;
+    background: #1B1B1B;
+    padding-left: 1rem;
 }
 
 #search-history-list{
+    overflow: auto;
+    height: 100%;
+}
 
+#search-history-title{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 1rem 0;
+}
+
+#history-title{
+    display: flex;
+    align-items: center;
+    color: #888888;
+}
+
+#search-history-title button{
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: smaller;
+    color: #888888;
+    background: #1B1B1B;
+}
+
+#search-history-list .item{
+    font-size: large;
+    color: #fff;
+    margin-top: 1rem;
 }
 
 #search-result-list{
     /* 하나의 페이지에서 2개의 div 요소 보여주기 위한 초기 설정값 */
     display: none;
+    overflow: auto;
+    height: 90%;
 }
+
+#search-value{
+    display: none;
+    align-items: center;
+    color: #888888;
+    height: 10%;
+    color: #fff;
+}
+
+#view-list{
+    color: #fff;
+}
+
+#view-list .item{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: auto;
+}
+
+#view-list .item .item-album img{
+    width: 5rem;
+}
+
+#view-list .item .item-content{
+    padding-left: 0.5rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#view-list .item .item-content .item-title{
+    padding-top: 1.5rem;
+}
+
+#view-list img{
+    margin: 0.5rem 0;
+    width: 90%;
+}
+
+#paging{
+    display: flex;
+    justify-content: center;
+    color: #888888;
+    align-items: center;
+}
+
+#paging .on{
+    color: #fff
+}
+
+#paging button{
+    border: none;
+    background: #1B1B1B;
+}
+
+
+
