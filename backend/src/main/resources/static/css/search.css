@@ -1,6 +1,5 @@
 #search-bar {
     height: 10%;
-    background-color: #FFEB32;
 }
 
 #form{
@@ -16,10 +15,15 @@
     font-size: 1rem;
     font-weight: bold;
     border: none;
+    color: #fff;
 }
 
 #search-bar #search-submit{
     background: #1B1B1B;
     float: right;
     border: none;
+}
+
+input:focus{
+    outline: none;
 }

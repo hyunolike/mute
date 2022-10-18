@@ -25,13 +25,15 @@ function getSearchApi() {
     const getSearchName = document.getElementById("search-name").value;
     const fixBringSearchName = document.getElementById('search-value');
 
-    fixBringSearchName.innerHTML = `<border> ${getSearchName} </border> 이(가) 포함 된 노래`;
+    fixBringSearchName.innerHTML = `'${getSearchName}' 이(가) 포함 된 노래`;
 
     const searchHistoryList = document.getElementById('search-history-list');
     const searchResultList = document.getElementById('search-result-list');
+    const searchResult = document.getElementById('search-value');
 
     searchHistoryList.style.display = "none";
     searchResultList.style.display = "block";
+    searchResult.style.display="flex";
 
 
     var totalData;
@@ -72,12 +74,10 @@ function getSearchApi() {
 
         let pageHtml = "";
 
-        pageHtml += "<li><a href='#' id='prev'> 이전 </a></li>";
-        pageHtml += "<li><a href='#' id='next'> 다음 </a></li>";
-
-        // 페이징 번호
-        pageHtml +=  "<li class='on'>" + globalCurrentPage + "</a></li>";
-        pageHtml += "<li>" + last + "</li>";
+        pageHtml += "<button class='next'><a href='#' id='prev'><img src='../img/navigate-before.svg' alt= /></a></button>";
+        pageHtml +=  "<div class='on'>" + globalCurrentPage + "</a></div>";
+        pageHtml += "<div>"+ "/" + last + "</div>";
+        pageHtml += "<button class='next'><a href='#' id='next'><img src='../img/navigate-next.svg' alt= /></a></button>";
 
         $("#paging").html(pageHtml);
 
@@ -92,7 +92,7 @@ function getSearchApi() {
          * 2. 해당 요소 아이디에 맞는 selectedPage 값 가져오기
          * 3. paging()-페이지 표시 함수, displayData()-글 목록 표시 함수 호출
          */
-        $("#paging li a").click(function (){
+        $("#paging button a").click(function (){
             var removeItemDiv = document.getElementById("view-list");
 
             // 자식 요소 전체 삭제
@@ -127,7 +127,10 @@ function getSearchApi() {
             i < (currentPage - 1) * dataPerPage + dataPerPage;
             i++
         ){
-            $('<div class="item">' + '<h2>' + res.data.musics[i].music_name + '</h2>' + '</div>').appendTo('#view-list');
+            $('<div class="item">' + '<div class="item-album">' + '<img src="' + res.data.musics[i].album_url + '"/>' +'</div>' +
+                '<div class="item-content">' + '<div class="item-title">' + res.data.musics[i].music_name + '</div>' +
+                '<div class="item-singer">' + res.data.musics[i].singer + '</div>'+'</div>'
+                + '</div>' + '<img src="../img/search-bar.svg"/>').appendTo('#view-list');
         }
     }
 }
