@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,
+  maximum-scale=1.0, minimum-scale=1.0">
+    <title>Mute</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/mypage.css}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="main">
+    <header th:replace="header :: header"></header>
+    <div id="mypage">
+        <div id="profile-section">
+            <div id="profile-img">
+                <img src="../img/profile-img.svg" alt="">
+            </div>
+            <div id="profile-info">
+                <div id="profile-info-email" th:text="${email}">email</div>
+            </div>
+            <div id="memo-title">
+                저장한 가사
+            </div>
+            <div id="memo-count">
+                <div id="count" th:text="${count}">count</div>
+            </div>
+        </div>
+        <div id="sign-out">
+            <button id="btn" type="button" onclick="signOut();">
+                <div id="btn-title">
+                    로그아웃
+                </div>
+                <img src="../img/sign-out.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <footer th:replace="footer :: footer"></footer>
+</div>
+</body>
+<!-- html tag 인식을 위한 위치 조정 -->
+<script type="text/javascript" th:src="@{/js/my-page.js}"></script>
+<script type="text/javascript" th:src="@{/js/footer.js}"></script>
+</html>

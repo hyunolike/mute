@@ -16,6 +16,5 @@ function selectText() {
 
 document.onmouseup = function() {
     document.getElementById("console").innerHTML = selectText();
-
-
 }
+

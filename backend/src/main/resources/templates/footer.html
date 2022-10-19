@@ -27,8 +27,8 @@
             </button>
         </div>
         <div id="setting-page">
-            <button>
-                <img src="../img/footer/settings.svg" alt=""
+            <button onclick="goSettings()">
+                <img id="setting-page-img" src="../img/footer/settings.svg" alt=""
                      onmouseover="this.src='../img/footer/settings-mouseover.svg'"
                      onmouseout="this.src='../img/footer/settings.svg'"
                 >
@@ -42,6 +42,10 @@
 
         function goSearch(){
             window.location.replace("http://localhost:9061/search")
+        }
+
+        function goSettings(){
+            window.location.replace("http://localhost:9061/my-page")
         }
     </script>
 </footer>
