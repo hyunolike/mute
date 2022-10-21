@@ -1,0 +1,150 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+         <!--    <meta http-equiv="Content-Security-Policy" content= "script-src 'unsafe-inline' 'sha256-mc9LH2e3kV1BBF1B3icEq0dR656rD3pdHToRTsWEQTI=';">-->
+        <link href="../../static/css/main.css" rel="stylesheet" />
+        <link href="../../static/css/splash.css" rel="stylesheet"/>
+        <link href="../../static/css/login.css" rel="stylesheet" />
+        <link href="../../static/css/info.css" rel="stylesheet" />
+        <link href="../../static/js/info.js" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+        <style>
+            * {font-family: ‘SUIT’, sans-serif;}
+        </style>
+        <script type="text/javascript" src="/js/splash.js"></script>
+        <script>
+            function openCity(evt, cityName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+            </script>
+        <title>Mute</title>
+    </head>
+<body>
+    <div class="main sub_page">
+        <div class="top_area">
+            <div class="side_header">
+                <a href="#" class="top_left_ico back">
+                </a>
+                <div class="song_txt">    
+                    <p class="title">아이와 나의 바다</p>
+                    <p class="singer">아이유(IU)</p>
+                </div>
+                <a class="top_right_ico"></a>
+            </div>
+            <div class="album_cover"><img src="../../static/img/info/album_cover.jpeg"></div>
+        </div>
+        <div class="bottom_area">
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, '가사')">가사</button>
+                <button class="tablinks" onclick="openCity(event, '곡 정보')">곡 정보</button>
+            </div>
+            <div id="가사" class="tabcontent">
+                <p>
+                    그러나 시간이 지나도 </br>
+                    아물지 않는 일들이 있지</br>
+                    내가 날 온전히 사랑하지 못해서</br>
+                    맘이 가난한 밤이야</br>
+                    거울 속에 마주친 얼굴이 어색해서</br>
+                    습관처럼 조용히 눈을 감아</br>
+                    밤이 되면 서둘러 내일로 가고 싶어</br>
+                    수많은 소원 아래 매일 다른 꿈을 꾸던</br>
+                    아이는 그렇게 오랜 시간</br>
+                    겨우 내가 되려고 아팠던 걸까</br>
+                    쌓이는 하루만큼 더 멀어져</br>
+                    우리는 화해할 수 없을 것 같아</br>
+                    나아지지 않을 것 같아</br>
+                    어린 날 내 맘엔 영원히</br>
+                    가물지 않는 바다가 있었지</br>
+                    이제는 흔적만이 남아 희미한 그곳엔</br>
+                    설렘으로 차오르던 나의 숨소리와</br>
+                    머리 위로 선선히 부는 바람</br>
+                    파도가 되어 어디로든 달려가고 싶어</br>
+                    작은 두려움 아래 천천히 두 눈을 뜨면</br>
+                    세상은 그렇게 모든 순간</br>
+                    내게로 와 눈부신 선물이 되고</br>
+                    숱하게 의심하던 나는 그제야</br>
+                    나에게 대답할 수 있을 것 같아</br>
+                    선 너머에 기억이</br>
+                    나를 부르고 있어</br>
+                    아주 오랜 시간 동안</br>
+                    잊고 있던 목소리에</br>
+                    물결을 거슬러 나 돌아가</br>
+                    내 안의 바다가 태어난 곳으로</br>
+                    휩쓸려 길을 잃어도 자유로와</br>
+                    더이상 날 가두는 어둠에 눈 감지 않아</br>
+                    두 번 다시 날 모른 척 하지 않아</br>
+                    그럼에도 여전히 가끔은</br>
+                    삶에게 지는 날들도 있겠지</br>
+                    또다시 헤매일지라도 돌아오는 길을 알아</br>
+                </p>
+                <div class="mark_pop" style="left:0px; top:10px;">
+                    <div class="t_box">
+                        <a href="#"><div class="color_box blue"></div></a>
+                        <div class="r_line"></div>
+                        <a href="#">저장</a>
+                    </div>
+                    <div class="b_tri"></div>
+                </div>
+                <div class="mark_pop" style="left:90px; top:10px;">
+                    <div class="t_box">
+                        <a href="#"><div class="color_box red"></div></a>
+                        <div class="r_line"></div>
+                        <a href="#"><div class="color_box yellow"></div></a>
+                        <div class="r_line"></div>
+                        <a href="#"><div class="color_box green"></div></a>
+                        <div class="r_line"></div>
+                        <a href="#"><div class="color_box blue"></div></a>
+                        <div class="r_line"></div>
+                        <a href="#"><div class="color_box purple"></div></a>
+                        <div class="r_line"></div>
+                        <a href="#"><div class="color_box line_txt"></div></a>
+                    </div>
+                    <div class="b_tri"></div>
+                </div>
+            </div>  
+            <div id="곡 정보" class="tabcontent">
+                <ul class="m_info">
+                    <li>
+                        <p>아티스트</p>
+                        <p>아이유(IU)</p>
+                    </li> 
+                    <li>
+                        <p>앨범</p>
+                        <p>IU 5th Album 'LILAC'</p>
+                    </li> 
+                    <li>
+                        <p>장르</p>
+                        <p>록/포크(국내)</p>
+                    </li> 
+                    <li>
+                        <p>작곡</p>
+                        <p>제휘, 김희원</p>
+                    </li> 
+                    <li>
+                        <p>작사</p>
+                        <p>아이유(IU)</p>
+                    </li> 
+                    <li>
+                        <p>편곡</p>
+                        <p>제휘</p>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>

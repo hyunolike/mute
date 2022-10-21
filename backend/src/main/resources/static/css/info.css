@@ -1,0 +1,51 @@
+html { font-size: 16px; color:#fff; text-decoration: none;}
+.sub_page {position: relative; overflow:hidden; background-color:#1B1B1B;}
+.top_area {width:100%; padding:66px 30px 0 30px; box-sizing:border-box;display:inline-block;}
+.side_header { width:100%; text-align: center; height:80px; overflow:hidden;}
+.side_header a {text-decoration: none; color:#fff;}
+.top_left_ico{width:50px;height:24px;position:relative;float:left;font-size:1.125em;line-height: 1.125em;text-align: center; text-align: left; font-weight:400;}
+.top_left_ico.back {background: url("../../static/img/common/arrow_back_ios.svg") no-repeat top left;float: left;}
+.top_right_ico{width:50px; height:24px; position:relative; float:right; font-size:1.125em; text-align: right; font-weight:400;}
+.pop_top{height:120px; width:100%; padding:66px 30px 0 30px; box-sizing:border-box;display:inline-block;}
+.pop_top .side_header {height:auto;}
+
+/*음악상세*/
+.song_txt {width:calc(100% - 100px); position:relative; float:left;}
+.side_header .title {font-size:1.5em;  color:#fff; font-style:normal; font-weight:700; text-align: center;  }
+.side_header .singer {font-size:0.875em; margin-top:5px; color:#888; font-style:normal; font-weight:400;  text-align: center;}
+.album_cover {width:70px; height:70px; border-radius:2px; box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.5); margin:auto; margin-bottom:30px; overflow:hidden;}
+.album_cover > img {display: block; width:100%; height:100%; object-fit: cover;}
+.bottom_area {background-color:#151515; padding:0 30px; height: calc(100% - 246px); overflow: hidden;}
+.bottom_area .tab { overflow: hidden; height:70px; border-bottom:1px solid #333;}
+.bottom_area .tab button { font-size:1.125em; color:#888; background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding-top: 15px; transition: 0.3s; width:50%; height:70px;}  
+.bottom_area .tab button:hover {  font-size:1.125em; font-weight:500; color:#888;}
+.bottom_area .tab button.active { color:#fff; font-weight:700; font-size:1.125em; border-bottom:1px solid #fff;}
+.bottom_area .tabcontent {position:relative; height: calc(100% - 170px); color:#fff; padding-top: 50px; border-top: none; font-size:1em; line-height:1.625em; overflow:scroll; box-sizing: border-box;}
+.m_info { }
+.m_info li {margin-bottom:30px; }
+.m_info li p {font-size:1em; color:#fff; font-weight:700;}
+.m_info li p:first-child {color:#888; font-weight:400;}
+
+/*마크팝업_1*/
+.mark_pop {position: absolute;}
+.mark_pop .t_box {height:34px;background-color:#333;border-radius:2px;padding:8px;box-sizing:border-box;float: left;}
+.mark_pop .t_box a { color: #fff; text-decoration: none;line-height: 1.35em; float: left; text-align: center;}
+.mark_pop .t_box a p {line-height:1.125em;color:#fff; font-weight:400; font-size:1em; text-decoration: none;}
+.mark_pop .r_line {height:14px;background-color: #888;width:1px;display: inline-block;margin: 2px 8px;float: left;}
+.mark_pop .b_tri{position: absolute;width: 10px;height: 8px;left: 5px;top: 33px;background:url("../../static/img/common/b_tri.svg") no-repeat center center;}
+
+/*컬러박스*/
+.color_box {position:relative;width:18px;height:18px;border-radius:2px;display:inline-block;float: left;}
+.color_box.red {background-color:#FF4A6B;}
+.color_box.yellow {background-color:#FFDF35;}
+.color_box.green {background-color:#5ACB58;}
+.color_box.blue {background-color:#2E9BFF;}
+.color_box.purple {background-color:#9757FF;}
+.color_box.line_txt {background:url("../../static/img/info/line_txt.svg") no-repeat center center;}
+
+/*메모작성*/
+.photo_plus {width:100%; height:250px; background:#151515 url("../../static/img/common/add.svg") no-repeat center center;}
+.memo_area{padding:50px 30px 0 30px; height:calc(100% - 470px); overflow:scroll;}
+.lyric_area {padding-bottom:30px; border-bottom:1px solid #333; font-weight:400; font-size:1em; line-height: 1.625em;}
+.typing_area {margin-top:30px; background-color: none;}
+.typing_area textarea {width:100%; color:#fff; font-weight:400; font-size:1em; line-height: 1.625em; background:none; border:none;}
