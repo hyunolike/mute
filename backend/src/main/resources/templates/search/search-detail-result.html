@@ -2,38 +2,49 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,
-  maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mute</title>
     <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/search.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/info.css}" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
     <script type="text/javascript" th:src="@{/js/search-detail-result.js}"></script>
 </head>
 <body>
 <div class="main">
-    <div id="info-header">
-        <div id="back-button">
-
+    <div class="sub_page">
+        <div class="top_area">
+            <div class="side_header">
+                <a href="#" class="top_left_ico back">
+                    <img src="../img/common/arrow_back_ios.svg" alt="">
+                </a>
+                <div id="song_txt" class="song_txt">
+                    <!-- 데이터 조합으로 생성 -->
+                </div>
+                <a class="top_right_ico"></a>
+            </div>
+            <div id="album_cover" class="album_cover">
+                <!-- 데이터 조합으로 생성 -->
+            </div>
         </div>
-        <div id="info-music-title">
-            <div id="title">
-
+        <div class="bottom_area">
+            <div class="tab">
+                <button id="clickBtn" class="tablinks" onclick="openCity(event, '가사')">가사</button>
+                <button class="tablinks" onclick="openCity(event, '곡 정보')">곡 정보</button>
             </div>
-            <div id="singer">
-
+            <div id="가사" class="tabcontent">
             </div>
-            <div id="album">
+            <div id="곡 정보" class="tabcontent">
+                <ul id="m_info" class="m_info">
 
+                </ul>
             </div>
         </div>
-    </div>
-
-    <div id="info-section">
-        
     </div>
 
     <footer th:replace="footer :: footer"></footer>
