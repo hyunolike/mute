@@ -28,7 +28,7 @@ if(currentURL !== searchViewURL){
  * 3. 다른 html 에서 해당 값을 이용해 데이터 뿌려줌
  * 4. html 이동!
  */
-function sendMusicInfoAPI(res, albumUrl){
+function sendMusicInfoAPI(res, albumUrl, musicName){
     axios.get(`http://localhost:9061/api/music-info/${res}`)
         .then((res) => {
         console.log(res.data);
@@ -42,7 +42,8 @@ function sendMusicInfoAPI(res, albumUrl){
             "lyricist": res.data.lyricist,
             "arranger": res.data.arranger,
             "lyrics_data": res.data.lyrics_data,
-            "album_url": albumUrl
+            "album_url": albumUrl,
+            "music_name": musicName
         }
 
         localStorage.setItem("musicInfoData", JSON.stringify(musicInfoData));
@@ -157,7 +158,7 @@ function getSearchApi() {
             i < (currentPage - 1) * dataPerPage + dataPerPage;
             i++
         ){
-            $('<div class="item" onclick="sendMusicInfoAPI(\'' + res.data.musics[i].singer + ' ' + res.data.musics[i].music_name + '\', \'' + res.data.musics[i].album_url + '\')">' + '<div class="item-album">' + '<img src="' + res.data.musics[i].album_url + '"/>' +'</div>' +
+            $('<div class="item" onclick="sendMusicInfoAPI(\'' + res.data.musics[i].singer + ' ' + res.data.musics[i].music_name + '\', \'' + res.data.musics[i].album_url + '\', \'' + res.data.musics[i].music_name + '\')">' + '<div class="item-album">' + '<img src="' + res.data.musics[i].album_url + '"/>' +'</div>' +
                 '<div class="item-content">' + '<div class="item-title">' + res.data.musics[i].music_name + '</div>' +
                 '<div class="item-singer">' + res.data.musics[i].singer + '</div>'+'</div>'
                 + '</div>' + '<img src="../img/search-bar.svg"/>').appendTo('#view-list');
