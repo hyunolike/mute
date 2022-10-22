@@ -60,4 +60,10 @@ public class IndexController {
 
         return "/setting/mypage";
     }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/music-mark")
+    public String musicMarkPage(){
+        return "/memo/musicmark";
+    }
 }
