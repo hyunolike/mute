@@ -21,6 +21,36 @@ if(currentURL !== searchViewURL){
     });
 }
 
+/**
+ * 로직 (서로다른 html 파일간 값 전달)
+ * 1. 데이터 결과값을 객체 형태로 저장 (+ 추가적으로 엘범 url 데이터 삽입)
+ * 2. localstorage.setItem()
+ * 3. 다른 html 에서 해당 값을 이용해 데이터 뿌려줌
+ * 4. html 이동!
+ */
+function sendMusicInfoAPI(res, albumUrl){
+    axios.get(`http://localhost:9061/api/music-info/${res}`)
+        .then((res) => {
+        console.log(res.data);
+
+        var musicInfoData = {
+            "artist_name": res.data.artist_name,
+            "album_name": res.data.album_name,
+            "release_date": res.data.release_date,
+            "genre": res.data.genre,
+            "composition": res.data.composition,
+            "lyricist": res.data.lyricist,
+            "arranger": res.data.arranger,
+            "lyrics_data": res.data.lyrics_data,
+            "album_url": albumUrl
+        }
+
+        localStorage.setItem("musicInfoData", JSON.stringify(musicInfoData));
+
+        location.replace("http://localhost:9061/music-info");
+    })
+}
+
 function getSearchApi() {
     const getSearchName = document.getElementById("search-name").value;
     const fixBringSearchName = document.getElementById('search-value');
@@ -127,7 +157,7 @@ function getSearchApi() {
             i < (currentPage - 1) * dataPerPage + dataPerPage;
             i++
         ){
-            $('<div class="item">' + '<div class="item-album">' + '<img src="' + res.data.musics[i].album_url + '"/>' +'</div>' +
+            $('<div class="item" onclick="sendMusicInfoAPI(\'' + res.data.musics[i].singer + ' ' + res.data.musics[i].music_name + '\', \'' + res.data.musics[i].album_url + '\')">' + '<div class="item-album">' + '<img src="' + res.data.musics[i].album_url + '"/>' +'</div>' +
                 '<div class="item-content">' + '<div class="item-title">' + res.data.musics[i].music_name + '</div>' +
                 '<div class="item-singer">' + res.data.musics[i].singer + '</div>'+'</div>'
                 + '</div>' + '<img src="../img/search-bar.svg"/>').appendTo('#view-list');
