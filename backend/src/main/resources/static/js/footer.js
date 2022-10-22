@@ -14,7 +14,7 @@ if(window.location.href.endsWith("search")){
 //     div.setAttribute('src', '../img/footer/home-mouseover.svg');
 // }
 //
-// if(window.location.href.endsWith("home")){
-//     const div = document.getElementById("main-page-img");
-//     div.setAttribute('src', '../img/footer/home-mouseover.svg');
-// }
+if(window.location.href.endsWith("mypage")){
+    const div = document.getElementById("setting-page-img");
+    div.setAttribute('src', '../img/footer/settings-mouseover.svg');
+}

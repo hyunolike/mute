@@ -1,6 +1,7 @@
 package com.hyun.musicmark.view;
 
 import com.hyun.musicmark.user.domain.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.security.Principal;
 
 @Controller
+@RequiredArgsConstructor
 public class IndexController {
+    private final IndexService indexService;
+
     @GetMapping("/")
     public String testPage(){
         return "index";
@@ -44,5 +48,16 @@ public class IndexController {
     @GetMapping("/music-info")
     public String bringMusicInfoResultPage(){
         return "/search/search-detail-result";
+    }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/my-page")
+    public String myPage(@AuthenticationPrincipal User user, Model model){
+        Long count = indexService.bringCountMusicmark(user.getUserId());
+
+        model.addAttribute("email", user.getEmail());
+        model.addAttribute("count", count);
+
+        return "/setting/mypage";
     }
 }
