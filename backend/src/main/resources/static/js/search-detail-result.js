@@ -17,7 +17,7 @@ $(document).ready(function (){
     $(`<li><p>발매일</p><p>${musicInfo.release_date}</p></li>`).appendTo('#m_info');
 
     // 가사 정보
-    $(`<p>${musicInfo.lyrics_data}</p>`).appendTo("#가사");
+    $(`<p id="drag_lyrics_data">${musicInfo.lyrics_data}</p>`).appendTo("#가사");
 });
 
 function openCity(evt, cityName) {
@@ -34,23 +34,41 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
-// function selectText() {
-//     console.log("mouse move");
-//
-//     var selectionText = "";
-//     if (document.getSelection) {
-//         selectionText = document.getSelection();
-//
-//     } else if (document.selection) {
-//         selectionText = document.selection.createRange().text;
-//         var html = "<div style='background-color: red; padding: 10px'>" + selectionText + "</div>";
-//         document.selection.createRange().pasteHTML(html);
-//     }
-//
-//     return selectionText;
-// }
-//
-// document.onmouseup = function() {
-//     document.getElementById("console").innerHTML = selectText();
-// }
+/**
+ * 마우스 드레그 시, 데이터 뽑는 기능
+ */
+function selectText() {
+    var selectionText = "";
+    if (document.getSelection) {
+        selectionText = document.getSelection();
+    } else if (document.selection) {
+        selectionText = document.selection.createRange().text;
+    }
+    console.log(selectionText.toString());
+    return selectionText.toString();
+}
+
+function saveLocalStorage(lyrics_data){
+    var menoMusicData = {
+        "lyrics_data": lyrics_data
+    }
+
+    localStorage.setItem("menoMusicData", JSON.stringify(menoMusicData));
+}
+
+/**
+ * 로직 - 마우스 드레그 시
+ * (중요) 해당 영역에서만 마우스 이벤트 동작하게끔 구성 - 가사 영역 부분에서만 동작하게 구성
+ * 1. 드레그 텍스트 뽑아 내기
+ * 2. 해당 텍스트 localStorage 저장
+ * 3. 메모 작성 페이지로 이동
+ */
+const drag_lyrics_data_selection = document.getElementById('가사');
+
+drag_lyrics_data_selection.addEventListener('mouseup', () => {
+    console.log("click")
+    let lyrics_data = selectText()
+    saveLocalStorage(lyrics_data);
+    location.replace("http://localhost:9061/music-mark");
+});
 

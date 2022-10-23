@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mute</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/search.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/info.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/info-memo-folder.css}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="main">
+    <div id="sub_page_memo">
+        <div class="pop_top">
+            <div class="side_header">
+                <a href="#" class="top_left_ico">취소</a>
+                <a href="#" class="top_right_ico" onclick="goHome()"> 다음 </a>
+            </div>
+        </div>
+        <div id="folder-section">
+
+        </div>
+    </div>
+    <footer th:replace="footer :: footer"></footer>
+</div>
+</body>
+<script type="text/javascript" th:src="@{/js/musicmark-folder.js}"></script>
+</html>

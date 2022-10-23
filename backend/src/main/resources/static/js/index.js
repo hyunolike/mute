@@ -3,7 +3,6 @@ function getMemoApi() {
 
     // 브라우저 시작 시 10개의 데이터 가져옴
     jQuery(document).ready(function ($) {
-        console.log("start api")
         for(let i = 0; i < 2; i++){
             bringData(count)
             count++;

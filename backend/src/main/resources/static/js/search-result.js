@@ -84,7 +84,6 @@ function getSearchApi() {
             }
         }).then(function (res) {
             totalData = res.data.musics.length; // 반환되는 데이터 길이 100개(고정)
-            console.log(`totalData: ${totalData}`);
 
             // 글 목록 표시 호출(테이블 생성)
             displayData(1, dataPerPage, res);
