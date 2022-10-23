@@ -1,0 +1,40 @@
+#sub_page_memo{
+    position: relative;
+    overflow: hidden;
+    background-color: #1B1B1B;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+
+#folder-section{
+    color: #fff;
+    overflow: auto;
+}
+
+#folder-section .item{
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: auto;
+}
+
+#folder-section .item .item-album img{
+    width: 5rem;
+}
+
+#folder-section .item .item-content{
+    padding-left: 0.5rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#folder-section .item .item-content .item-title{
+    padding-top: 1.5rem;
+}
+
+#folder-section img{
+    margin: 0.5rem 1rem;
+    width: 90%;
+}
+

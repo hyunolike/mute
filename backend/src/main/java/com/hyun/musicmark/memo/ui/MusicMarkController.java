@@ -1,9 +1,7 @@
 package com.hyun.musicmark.memo.ui;
 
 import com.hyun.musicmark.memo.application.MusicMarkService;
-import com.hyun.musicmark.memo.ui.dto.MusicMarkInfo;
-import com.hyun.musicmark.memo.ui.dto.MusicMarkListInfo;
-import com.hyun.musicmark.memo.ui.dto.MusicMarkRequest;
+import com.hyun.musicmark.memo.ui.dto.*;
 import com.hyun.musicmark.user.domain.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -47,5 +45,11 @@ public class MusicMarkController {
     @GetMapping("/musicmark/{memo-id}")
     public MusicMarkInfo bringMusicmark(@PathVariable(name = "memo-id") Long memoId){
         return musicMarkService.bringMuteMemo(memoId);
+    }
+
+    @ApiOperation(value = "현재 접속한 유저의 뮤직마크(폴더 정보) 리스트 목록 반환하는 메소드")
+    @GetMapping("/musicmark/folder")
+    public MusicMarkFolderListInfo bringFolderInfo(@AuthenticationPrincipal User user){
+        return musicMarkService.bringFolderList(user.getUserId());
     }
 }

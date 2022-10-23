@@ -3,9 +3,7 @@ package com.hyun.musicmark.memo.application;
 import com.hyun.musicmark.memo.domain.MusicMark;
 import com.hyun.musicmark.memo.domain.MusicMarkFolerType;
 import com.hyun.musicmark.memo.domain.MusicMarkRepository;
-import com.hyun.musicmark.memo.ui.dto.MusicMarkInfo;
-import com.hyun.musicmark.memo.ui.dto.MusicMarkListInfo;
-import com.hyun.musicmark.memo.ui.dto.MusicMarkRequest;
+import com.hyun.musicmark.memo.ui.dto.*;
 import com.hyun.musicmark.user.domain.User;
 import com.hyun.musicmark.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -85,6 +83,25 @@ public class MusicMarkService {
                         .build()).collect(Collectors.toList());
 
         return MusicMarkListInfo.builder().musicmark_list(musicMarkInfo).build();
+    }
+
+    /**
+     * 폴더별 그룹핑
+     */
+    // TODO: 폴더 테이블 분리 및 로직 수정 필요 2022/10/23 일
+    public MusicMarkFolderListInfo bringFolderList(Long userId){
+        Optional<User> user = userRepository.findById(userId);
+
+        List<FolderInfo> folderInfos = user.get().getMusicMarks().stream()
+                .distinct()
+                .map(musicMark -> FolderInfo.builder()
+                        .folder_name(musicMark.getMusicMarkFolerType().getFolder_name())
+                        .folder_type(musicMark.getMusicMarkFolerType().getFloder_type().toString())
+                        .folder_desc(musicMark.getMusicMarkFolerType().getFoloder_desc())
+                        .build())
+                .collect(Collectors.toList());
+
+        return MusicMarkFolderListInfo.builder().folder_list(folderInfos).build();
     }
 
     /**

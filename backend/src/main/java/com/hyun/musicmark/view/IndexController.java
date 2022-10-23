@@ -66,4 +66,10 @@ public class IndexController {
     public String musicMarkPage(){
         return "/memo/musicmark";
     }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/music-mark-folder")
+    public String saveMusicMarkPage(){
+        return "/memo/musicmark-folder";
+    }
 }
