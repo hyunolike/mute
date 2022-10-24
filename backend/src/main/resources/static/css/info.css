@@ -1,27 +1,31 @@
 html { font-size: 16px; color:#fff; text-decoration: none;}
-.sub_page {position: relative; overflow:hidden; background-color:#1B1B1B; height: 90%;display: grid;grid-template-rows: 1fr 3fr;}
-.sub_page_memo {position: relative; overflow:hidden; background-color:#1B1B1B; height: 90%;display: grid;grid-template-rows: 1fr 2fr 4fr;}
-.top_area {width:100%; padding:66px 30px 30px 30px; box-sizing:border-box;}
+body {margin:0;}
+.sub_page {position: relative; overflow:hidden; background-color:#1B1B1B;}
+.top_area {width:100%; padding:66px 30px 0 30px; box-sizing:border-box;display:inline-block;}
 .side_header { width:100%; text-align: center; height:80px; overflow:hidden;}
 .side_header a {text-decoration: none; color:#fff;}
+.side_header_2 { width:100%; text-align: center; height:40px; overflow:hidden;}
+.side_header_2 a {text-decoration: none; color:#fff;}
 .top_left_ico{width:50px;height:24px;position:relative;float:left;font-size:1.125em;line-height: 1.125em;text-align: center; text-align: left; font-weight:400;}
 .top_left_ico.back {background: url("../../static/img/common/arrow_back_ios.svg") no-repeat top left;float: left;}
 .top_right_ico{width:50px; height:24px; position:relative; float:right; font-size:1.125em; text-align: right; font-weight:400;}
 .pop_top{height:120px; width:100%; padding:66px 30px 0 30px; box-sizing:border-box;display:inline-block;}
 .pop_top .side_header {height:auto;}
+.top_center {font-size:1.5em; font-weight:700; color:#fff;}
 
 /*음악상세*/
 .song_txt {width:calc(100% - 100px); position:relative; float:left;}
 .side_header .title {font-size:1.5em;  color:#fff; font-style:normal; font-weight:700; text-align: center;  }
 .side_header .singer {font-size:0.875em; margin-top:5px; color:#888; font-style:normal; font-weight:400;  text-align: center;}
-.album_cover {width:70px; height:70px; border-radius:2px; box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.5); margin:auto; overflow:hidden;}
+.album_cover {width:70px; height:70px; border-radius:2px; box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.5); margin:auto; margin-bottom:30px; overflow:hidden;}
 .album_cover > img {display: block; width:100%; height:100%; object-fit: cover;}
-.bottom_area {background-color:#151515; padding:0 30px;display: grid;grid-template-rows: 1fr 6fr;}
+.bottom_area {background-color:#151515; padding:0 30px; height: calc(100% - 246px); overflow: hidden;}
+.bottom_area_2 {background: #1b1b1b; padding:0 30px; height: calc(100% - 246px); overflow: hidden;}
 .bottom_area .tab { overflow: hidden; height:70px; border-bottom:1px solid #333;}
 .bottom_area .tab button { font-size:1.125em; color:#888; background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding-top: 15px; transition: 0.3s; width:50%; height:70px;}  
 .bottom_area .tab button:hover {  font-size:1.125em; font-weight:500; color:#888;}
 .bottom_area .tab button.active { color:#fff; font-weight:700; font-size:1.125em; border-bottom:1px solid #fff;}
-.bottom_area .tabcontent {position:relative; height: calc(100vh - 30rem); color:#fff; padding: 1rem; border-top: none; font-size:1em; line-height:1.625em; overflow:scroll; overflow-x: hidden; box-sizing: border-box;}
+.bottom_area .tabcontent {position:relative; height: calc(100% - 170px); color:#fff; padding-top: 50px; border-top: none; font-size:1em; line-height:1.625em; overflow:scroll; box-sizing: border-box;}
 .m_info { }
 .m_info li {margin-bottom:30px; }
 .m_info li p {font-size:1em; color:#fff; font-weight:700;}
@@ -46,7 +50,25 @@ html { font-size: 16px; color:#fff; text-decoration: none;}
 
 /*메모작성*/
 .photo_plus {width:100%; height:250px; background:#151515 url("../../static/img/common/add.svg") no-repeat center center;}
-.memo_area{padding:50px 30px 0 30px; overflow:scroll;overflow-x: hidden;}
+.memo_area{padding:50px 30px 0 30px; height:calc(100% - 470px); overflow:scroll;}
 .lyric_area {padding-bottom:30px; border-bottom:1px solid #333; font-weight:400; font-size:1em; line-height: 1.625em;}
 .typing_area {margin-top:30px; background-color: none;}
 .typing_area textarea {width:100%; color:#fff; font-weight:400; font-size:1em; line-height: 1.625em; background:none; border:none;}
+
+/*저장된 가사*/
+.sub_area {width:100%;text-align: center;height:56px;overflow:hidden;padding-top: 20px;box-sizing: border-box;}
+.sub_area select {float:right;background-color: #1b1b1b;border:none;color: #fff;}
+.memo_box {background-color:#151515; width:100%; height:auto; border-radius:5px; padding:30px; color:#fff; font-weight:400; line-height:1.625em; font-size:1em; box-sizing:border-box; box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.5); margin-bottom:30px;}
+.memo_box.red {border-top:2px solid #FF4A6B;}
+.memo_box.yellow {border-top:2px solid #FFDF35;}
+.memo_box.green {border-top:2px solid #5ACB58;}
+.memo_box.blue {border-top:2px solid #2E9BFF;}
+.memo_box.purple {border-top:2px solid #9757FF;}  
+.memo_box.line_txt {border-top:2px solid #1B1B1B;}
+.memo_box p {margin:0 0 30px 0;}
+.song_info {border-top:1px solid #333;padding: 15px 0px 0px 0px;width: 100%;box-sizing: border-box;}
+.song_info .album_img {width:50px; height:50px; border-radius:2px; overflow:hidden; margin-right:10px; float:left; display: inline-block; }
+.song_info .album_img > img {display: block; width:100%; height:100%; object-fit: cover;}
+.song_info .album_txt {width:calc(100% - 60px); overflow:hidden; text-overflow: ellipsis; white-space: nowrap;}
+.song_info .album_txt p{ height:1.25em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin:3px 0 0px 0;}
+.song_info .album_txt p:last-child {color:#888;}
