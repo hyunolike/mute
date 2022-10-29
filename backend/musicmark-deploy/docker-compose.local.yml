@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  db:
+    container_name: mariadb.musicmark.local
+    hostname: mariadb_local
+    image: mariadb
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: 'musicmark'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - '3377:3306'
+    restart: always
+    volumes:
+      - './volumes/mysql/default:/var/lib/mysql'
+    command:
+      - 'mysqld'
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
+      - '--sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+    networks:
+      - musicmark_network
+
+  app:
+    container_name: spring-boot.musicmark.local
+    build:
+      context: ../
+      dockerfile: Dockerfile.local
+    ports:
+      - "9061:9061"
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+      - musicmark_network
+
+networks:
+  musicmark_network:
+
+#    WORKDIR /
+#    RUN ["./gradlew", "clean", "bootJar", "-Dspring.profiles.active=local"]
+

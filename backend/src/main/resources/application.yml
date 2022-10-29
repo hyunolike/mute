@@ -38,7 +38,7 @@ spring:
     activate:
       on-profile: "local_db"
   datasource:
-    url: jdbc:mariadb://localhost:3377/musicmark
+    url: jdbc:mariadb://mariadb_local:3306/musicmark
     username: root
     password:
     driver-class-name: org.mariadb.jdbc.Driver
