@@ -25,12 +25,12 @@ public class IndexController {
      */
     @GetMapping("/home")
     public String mainPage(Principal principal){
-        return principal != null ? "index" : "/auth/login";
+        return principal != null ? "index" : "auth/login";
     }
 
     @GetMapping("/login")
     public String loginPage(){
-        return "/auth/login";
+        return "auth/login";
     }
 
     /**
@@ -41,13 +41,13 @@ public class IndexController {
     public String bringSearchResultPage(@AuthenticationPrincipal User user, Model model){
         model.addAttribute("userId", user.getUserId());
 
-        return "/search/search-result";
+        return "search/search-result";
     }
 
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/music-info")
     public String bringMusicInfoResultPage(){
-        return "/search/search-detail-result";
+        return "search/search-detail-result";
     }
 
     @PreAuthorize("isAuthenticated()")
@@ -58,18 +58,18 @@ public class IndexController {
         model.addAttribute("email", user.getEmail());
         model.addAttribute("count", count);
 
-        return "/setting/mypage";
+        return "setting/mypage";
     }
 
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/music-mark")
     public String musicMarkPage(){
-        return "/memo/musicmark";
+        return "memo/musicmark";
     }
 
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/music-mark-folder")
     public String saveMusicMarkPage(){
-        return "/memo/musicmark-folder";
+        return "memo/musicmark-folder";
     }
 }
