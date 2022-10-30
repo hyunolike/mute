@@ -15,16 +15,19 @@
 
 이용자들이 종종 상황에 맞는 좋아하는 가사를 쉽게 찾는다는 목표로 하고 있어요!
 
-Mute가 음악 감상을 더 즐겁고, 가사들을 쉽게 기억할 수 있도록 도와줄게요 🎉
+Mute가 음악 감상을 더 즐겁고, 가사들을 쉽게 기억할 수 있도록 도와ㅆ줄게요 🎉
+
+### 💻 서비스 이용을 보다 쉽게
+### ✍️ 기록을 한번에 모아서 보자 !
+### 🔎 기록할 음악을 찾고 싶어
+### 📝 가사를 기록해야지
+### 😎 친구에게 공유할래 ?
 
 ## 👩‍👦구성원 
 |  [황현지](https://github.com/ghkdgus0716)  |  [장현호](https://github.com/hyunolike)  | 
 | :----------: |  :--------:  |  
 | <img src="https://avatars.githubusercontent.com/ghkdgus0716" width=200px alt="황현지"/>  | <img src="https://avatars.githubusercontent.com/hyunolike" width=200px alt="장현호"/> |
 |기획 & 디자인 & 퍼블리싱 담당🌠|프론트엔드 & 백엔드 담당🌃|
-
-## 🖥 서비스 화면
-
 
 ##  ⚡️ 기술 스택
 ### Front-end
