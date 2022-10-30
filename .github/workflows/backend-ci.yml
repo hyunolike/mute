@@ -1,0 +1,50 @@
+name: Backend CI of mute project
+
+on:
+  push:
+    branches:
+      - release
+  pull_request:
+    branches:
+      - develop
+      - release
+    paths:
+      - backend/**
+      - github/** # Github Actions 작업을 위한 포함
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Set up JDK 17 & Ready GitHub packages
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Grant execute permission for gradlew
+      uses: gradle/gradle-build-action@v2
+      with:
+        gradle-version: 7.5
+    - run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew build -x test
+
+    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
+    # the publishing section of your build.gradle
+    - name: Publish to GitHub Packages
+      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      with:
+        arguments: publish
+      env:
+        USERNAME:  hyunolike
+        TOKEN: ${{ secrets.MUTE_TOKEN }}
