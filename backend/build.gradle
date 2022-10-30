@@ -2,8 +2,6 @@ plugins {
     id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
     id 'java'
-    // maven repository plugin
-    // id 'maven-publish'
 }
 
 group = 'com.hyun'
@@ -49,22 +47,3 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
-
-//publishing {
-//    repositories {
-//        maven {
-//            name = "GitHubPackages"
-//            url "https://maven.pkg.github.com/hyunolike/music-bookmark"
-//            credentials {
-//                username = project.findProperty("gpr.user")
-//                password = project.findProperty("gpr.key")
-//            }
-//        }
-//    }
-//    publications {
-//        gpr(MavenPublication) {
-//            from(components.java)
-//        }
-//    }
-//}
-

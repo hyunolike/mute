@@ -1,1 +1,9 @@
-# 깃허브 액션 테스트
+FROM amazoncorretto:17
+
+# JAR_FILE 변수
+ARG JAR_FILE=./*.jar
+
+# COPY 경로는 context 경로 안에 있어야 됨(중요)
+COPY ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java", "-jar", "/app.jar" ,"--spring.profiles.active=local"]
