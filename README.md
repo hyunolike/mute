@@ -33,9 +33,11 @@ Mute가 음악 감상을 더 즐겁고, 가사들을 쉽게 기억할 수 있도
 
 ##  ⚡️ 기술 스택
 ### Front-end
-(추가 예정)
+<img width="1302" alt="image" src="https://user-images.githubusercontent.com/61215550/199044716-37af5fff-46d6-4a8d-a153-c8886dae7e56.png">
+
 ### Back-end
-(추가 예정)
+<img width="1302" alt="image" src="https://user-images.githubusercontent.com/61215550/199042886-272931b2-28b1-4ba2-881a-61370b0c8d4f.png">
+
 ## ⚙️ Infra Structure
 (추가 예정)
 ## 🔀 CI/CD Pipeline
