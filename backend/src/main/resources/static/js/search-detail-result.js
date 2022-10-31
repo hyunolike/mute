@@ -69,6 +69,6 @@ drag_lyrics_data_selection.addEventListener('mouseup', () => {
     console.log("click")
     let lyrics_data = selectText()
     saveLocalStorage(lyrics_data);
-    location.replace("http://localhost:9061/music-mark");
+    location.replace(`http://${PATH.PUBLIC_IP}/music-mark`);
 });
 

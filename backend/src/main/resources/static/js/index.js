@@ -25,7 +25,7 @@ function getMemoApi() {
     }
 
     function bringData(count){
-        axios.get('http://localhost:9061/api/musicmark')
+        axios.get(`http://${PATH.PUBLIC_IP}/api/musicmark`)
             .then(function (res) {
                     $('<div class="item">' + '<div class="item-img">' + '<img src="' + res.data.musicmark_list[count].album_url + '"/>' + '</div>' + '<div class="item-title">' + res.data.musicmark_list[count].music_name + '</div>' + '<div class="item-singer">' + res.data.musicmark_list[count].singer + '</div>' + '</div>').appendTo('#memo-item');
                     observerLastEle();

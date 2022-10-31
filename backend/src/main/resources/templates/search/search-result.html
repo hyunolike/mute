@@ -12,7 +12,6 @@
     <link th:href="@{/css/search-result.css}" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-    <script type="text/javascript" th:src="@{/js/search-result.js}"></script>
 </head>
 <body>
 <div class="main">
@@ -43,11 +42,13 @@
     <footer th:replace="footer :: footer"></footer>
 
     <!--  검색 히스토리 값 전달을 위한 자바스크립트 인라인 코드  -->
+    <script type="text/javascript" th:src="@{/js/config/deploy.js}"></script>
+    <script type="text/javascript" th:src="@{/js/search-result.js}"></script>
     <script th:inline="javascript">
         /*<![CDATA[*/
         var userId = [[${userId}]];
-
-        axios.get('http://localhost:9061/api/search/' + userId)
+        // TODO: 주소 노출 안되게끔 작업 필요
+        axios.get(`http://${PATH.PUBLIC_IP}/api/search/` + userId)
             .then(function (res) {
                 var totalData = res.data.searchWords.length;
                 console.log(`totalData: ${totalData}`);
@@ -58,7 +59,8 @@
             })
 
         function deleteAllHistory(){
-            axios.delete('http://localhost:9061/api/search/' + userId);
+            // TODO: 주소 노출 안되게끔 작업 필요
+            axios.delete(`http://${PATH.PUBLIC_IP}/api/search/` + userId);
 
             $('.item').remove();
         }
