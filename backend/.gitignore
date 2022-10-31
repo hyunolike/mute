@@ -1,5 +1,5 @@
 ### 배포 주소 ###
-src/main/resources/config
+deploy.js
 
 musicmark-deploy/volumes
 
