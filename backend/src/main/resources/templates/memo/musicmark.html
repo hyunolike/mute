@@ -10,7 +10,7 @@
     <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/search.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/info.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/info-dev.css}" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
 </head>
@@ -19,8 +19,8 @@
     <div class="sub_page_memo">
         <div class="pop_top">
             <div class="side_header">
-                <a href="#" class="top_left_ico">취소</a>
-                <a href="http://localhost:9061/music-mark-folder" class="top_right_ico"> 다음 </a>
+                <a href="javascript:history.back()" class="top_left_ico">취소</a>
+                <a id="next_page" href="#" class="top_right_ico"> 다음 </a>
             </div>
         </div>
         <a href="#">
@@ -38,5 +38,9 @@
     <footer th:replace="footer :: footer"></footer>
 </div>
 </body>
+<script type="text/javascript" th:src="@{/js/config/deploy.js}"></script>
 <script type="text/javascript" th:src="@{/js/musicmark.js}"></script>
+<script type="text/javascript">
+    document.getElementById("next_page").href = "http://" + PATH.PUBLIC_IP + "/music-mark-folder";
+</script>
 </html>

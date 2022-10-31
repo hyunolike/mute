@@ -12,12 +12,12 @@
  */
 
 const currentURL = window.location.href;
-const searchViewURL = "http://localhost:9061/search";
+const searchViewURL = `http://${PATH.PUBLIC_IP}/search`;
 
 if(currentURL !== searchViewURL){
     const inputTag = document.getElementById('search-name');
     inputTag.addEventListener('mousedown', (event) => {
-        location.replace("http://localhost:9061/search");
+        location.replace(`http://${PATH.PUBLIC_IP}/search`);
     });
 }
 
@@ -29,7 +29,7 @@ if(currentURL !== searchViewURL){
  * 4. html 이동!
  */
 function sendMusicInfoAPI(res, albumUrl, musicName){
-    axios.get(`http://localhost:9061/api/music-info/${res}`)
+    axios.get(`http://${PATH.PUBLIC_IP}/api/music-info/${res}`)
         .then((res) => {
         console.log(res.data);
 
@@ -48,7 +48,7 @@ function sendMusicInfoAPI(res, albumUrl, musicName){
 
         localStorage.setItem("musicInfoData", JSON.stringify(musicInfoData));
 
-        location.replace("http://localhost:9061/music-info");
+        location.replace(`http://${PATH.PUBLIC_IP}/music-info`);
     })
 }
 
@@ -78,7 +78,7 @@ function getSearchApi() {
 
     // 페이징 처리 준비 단계
     function readyPaging(){
-        axios.get('http://localhost:9061/api/search', {
+        axios.get(`http://${PATH.PUBLIC_IP}/api/search`, {
             params: {
                 "article-name": getSearchName
             }

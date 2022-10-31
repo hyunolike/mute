@@ -9,7 +9,7 @@
  * 4. 완료 후, 메인 페이지로 자동 이동
  */
 $(document).ready(function (){
-    axios.get('http://localhost:9061/api/musicmark/folder')
+    axios.get(`http://${PATH.PUBLIC_IP}/api/musicmark/folder`)
         .then(function (res) {
 
             console.log(res.data.folder_list);
@@ -59,7 +59,7 @@ function saveMemo(item, folder_name, folder_desc){
     let lyricsData = JSON.parse(localStorage.getItem("menoMusicData"));
     let memo = JSON.parse(localStorage.getItem("menoData"));
 
-    axios.post('http://localhost:9061/api/musicmark', {
+    axios.post(`http://${PATH.PUBLIC_IP}/api/musicmark`, {
         "album_url": memoMusicData.album_url,
         "mark_info": lyricsData.lyrics_data,
         "memo": memo.meno_data,
