@@ -39,7 +39,7 @@ p, a, h1, h2, h3, h4, h5, h6, ul, li, tr, td, input, select, textarea, button, f
 .mark_pop .t_box a { color: #fff; text-decoration: none;line-height: 1.35em; float: left; text-align: center;}
 .mark_pop .t_box a p {line-height:1.125em;color:#fff; font-weight:400; font-size:1em; text-decoration: none;}
 .mark_pop .r_line {height:14px;background-color: #888;width:1px;display: inline-block;margin: 2px 8px;float: left;}
-.mark_pop .b_tri{position: absolute;width: 10px;height: 8px;left: 5px;top: 33px;background:url("../../static/img/common/b_tri.svg") no-repeat center center;}
+/*.mark_pop .b_tri{position: absolute;width: 10px;height: 8px;left: 5px;top: 33px;background:url("../../static/img/common/b_tri.svg") no-repeat center center;}*/
 
 /*컬러박스*/
 .color_box {position:relative;width:18px;height:18px;border-radius:2px;display:inline-block;float: left;}

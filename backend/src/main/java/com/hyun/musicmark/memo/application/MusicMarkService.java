@@ -60,8 +60,8 @@ public class MusicMarkService {
                     .mark_info(musicMark.get().getMark_info())
                     .track_id(musicMark.get().getTrack_id())
                     .memo(musicMark.get().getMemo())
-                    .music_name(musicMarkInfo.getMusic_name())
-                    .singer(musicMarkInfo.getSinger())
+                    .music_name(musicMark.get().getMusic_name())
+                    .singer(musicMark.get().getSinger())
                     .build();
         }
 
