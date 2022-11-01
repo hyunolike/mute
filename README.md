@@ -39,7 +39,8 @@ Mute가 음악 감상을 더 즐겁고, 가사들을 쉽게 기억할 수 있도
 <img width="1302" alt="image" src="https://user-images.githubusercontent.com/61215550/199042886-272931b2-28b1-4ba2-881a-61370b0c8d4f.png">
 
 ## ⚙️ Infra Structure
-(추가 예정)
+<img width="1302" alt="image" src="https://user-images.githubusercontent.com/61215550/199145687-8bc871b7-3210-44de-8e9d-560582d4b8cb.png">
+
 ## 🔀 CI/CD Pipeline
 <img width="1302" alt="image" src="https://user-images.githubusercontent.com/61215550/199052740-34bb5c3c-4773-43f4-ae5d-3ed40565bf09.png">
 
