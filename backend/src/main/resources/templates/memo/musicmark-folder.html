@@ -25,7 +25,16 @@
             </div>
         </div>
         <div id="folder-section">
-
+            <div id="test" class="item" onclick="tempMemo()">
+                <div class="item-album">
+                    <img src='https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/211/569/82211569_1630045244175_1_600x600.JPG/dims/resize/Q_80,0'/>
+                </div>
+                <div class="item-content">
+                    <div class="item-title">추억 (10)</div>
+                    <div class="item-singer">추억하고 싶은 가사</div>
+                </div>
+            </div>
+            <img src="../img/search-bar.svg"/>
         </div>
     </div>
     <footer th:replace="footer :: footer"></footer>
@@ -33,4 +42,24 @@
 </body>
 <script type="text/javascript" th:src="@{/js/deploy-config/deploy.js}"></script>
 <script type="text/javascript" th:src="@{/js/musicmark-folder.js}"></script>
+<script type="text/javascript">
+    function tempMemo(){
+        document.getElementById("test").style.backgroundColor = "#151515";
+
+        let memoMusicData = JSON.parse(localStorage.getItem("musicInfoData"));
+        let lyricsData = JSON.parse(localStorage.getItem("menoMusicData"));
+        let memo = JSON.parse(localStorage.getItem("menoData"));
+
+        axios.post(`http://${PATH.PUBLIC_IP}/api/musicmark`, {
+            "album_url": memoMusicData.album_url,
+            "mark_info": lyricsData.lyrics_data,
+            "memo": memo.meno_data,
+            "music_name": memoMusicData.music_name,
+            "singer": memoMusicData.artist_name,
+            "track_id": null
+        }).catch(function (err) {
+            console.log(err);
+        })
+    }
+</script>
 </html>
