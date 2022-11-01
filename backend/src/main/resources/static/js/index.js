@@ -27,10 +27,26 @@ function getMemoApi() {
     function bringData(count){
         axios.get(`http://${PATH.PUBLIC_IP}/api/musicmark`)
             .then(function (res) {
-                    $('<div class="item">' + '<div class="item-img">' + '<img src="' + res.data.musicmark_list[count].album_url + '"/>' + '</div>' + '<div class="item-title">' + res.data.musicmark_list[count].music_name + '</div>' + '<div class="item-singer">' + res.data.musicmark_list[count].singer + '</div>' + '</div>').appendTo('#memo-item');
+                    $('<div class="item" onclick="goMemo('+ res.data.musicmark_list[count].memo_id + ')">' + '<div class="item-img">' + '<img src="' + res.data.musicmark_list[count].album_url + '"/>' + '</div>' + '<div class="item-title">' + res.data.musicmark_list[count].music_name + '</div>' + '<div class="item-singer">' + res.data.musicmark_list[count].singer + '</div>' + '</div>').appendTo('#memo-item');
                     observerLastEle();
                 })
     }
 }
 
 getMemoApi();
+
+function goMemo(memoId){
+    axios.get(`http://${PATH.PUBLIC_IP}/api/musicmark/${memoId}`)
+        .then(function (res){
+        var memoInfoData = {
+            "music_name": res.data.music_name,
+            "singer": res.data.singer,
+            "mark_info": res.data.mark_info,
+            "memo": res.data.memo
+        }
+
+        localStorage.setItem("memoInfoData", JSON.stringify(memoInfoData));
+
+        location.replace(`http://${PATH.PUBLIC_IP}/memo`);
+    })
+}
