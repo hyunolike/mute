@@ -45,3 +45,13 @@ Mute가 음악 감상을 더 즐겁고, 가사들을 쉽게 기억할 수 있도
 <img width="1302" alt="image" src="https://user-images.githubusercontent.com/61215550/199052740-34bb5c3c-4773-43f4-ae5d-3ed40565bf09.png">
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">황현지, 장현호</span>에 의해 작성된 <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">뮤직마크 프로젝트</span>은(는) <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+
+---
+
+### 📌 Note 
+- Mute 프로젝트는 `vibe` `bugs` 사이트의 정책에 위반되는 **웹 크롤링 행위(서버 트래픽, 데이터 활용, 상업적 이용, 수익)** 을 금하고 있습니다. 
+- 웹 크롤링 행위에서 수집된 데이터는 파기되며, **개발 학습 목적의 행위임** 을 명시합니다. 
+- 사이트 운영자의 문제 제기 시, 본 프로젝트는 제거됩니다.
+- 문의 사항은 `fallear1@gmail.com` 이메일로 연락 부탁드립니다.
+
+<h4>2022년 11월 2일 | Mute 프로젝트 개발자 장현호</h4>
