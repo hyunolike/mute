@@ -18,8 +18,8 @@
                 >
             </button>
         </div>
-        <div id="memo-page">
-            <button>
+        <div id="folder-page">
+            <button onclick="goFolder()">
                 <img src="../img/footer/library_books.svg" alt=""
                      onmouseover="this.src='../img/footer/library-books-mouseover.svg'"
                      onmouseout="this.src='../img/footer/library_books.svg'"
@@ -46,6 +46,10 @@
 
         function goSettings(){
             window.location.replace(`http://${PATH.PUBLIC_IP}/my-page`)
+        }
+
+        function goFolder(){
+            window.location.replace(`http://${PATH.PUBLIC_IP}/folder`)
         }
     </script>
 </footer>
