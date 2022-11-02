@@ -78,4 +78,10 @@ public class IndexController {
     public String memoPage() {
         return "memo/memo";
     }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/folder")
+    public String folderPage() {
+        return "memo/folder";
+    }
 }

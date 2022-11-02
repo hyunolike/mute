@@ -1,0 +1,142 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <meta name="description" content="가사를 쉽게 간직하고 공유, Mute 음악 감상이 쉬워진다! Mute를 통해 쉽게 가사를 기록하고 음악을 감상해보세요 ">
+        <meta name="keywords" content="음악, 가사, 공유, 음악 감상">
+
+        <meta property="og:type" content="website">
+        <!--  TODO: 배포 사이트 주소로 변경 필요  -->
+        <meta property="og:url" content="https://example.com/page.html">
+        <meta property="og:title" content="Mute 음악 감상이 쉬워진다!">
+        <meta property="og:image" content="https://user-images.githubusercontent.com/61215550/199252319-b758849c-32b4-4f93-9885-5d8fd5d99a66.png">
+        <meta property="og:description" content="가사를 쉽게 간직하고 공유, Mute 음악 감상이 쉬워진다! Mute를 통해 쉽게 가사를 기록하고 음악을 감상해보세요">
+        <meta property="og:site_name" content="Mute">
+
+         <!--    <meta http-equiv="Content-Security-Policy" content= "script-src 'unsafe-inline' 'sha256-mc9LH2e3kV1BBF1B3icEq0dR656rD3pdHToRTsWEQTI=';">-->
+        <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/header.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/info-dev.css}" rel="stylesheet" type="text/css"/>
+        <title>Mute</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+        <!--  TODO: SWYG Script  -->
+        <script defer src="https://cdn.swygbro.com/public/widget/swyg-widget.js"></script>
+    </head>
+    <body>
+    <div class="main">
+        <div class="sub_page_folder">
+            <div class="top_area_folder">
+                <div class="side_header_2">
+                    <a href="#" class="top_left_ico back">
+                    </a>
+                    <span class="top_center"> 추억 </span>
+                    <a class="top_right_ico"></a>
+                </div>
+                <div class="sub_area">
+                    <select >
+                        <option value="최신순">최신순</option>
+                        <option value="가나다 순">가나다순</option>
+                    </select>                
+                </div>
+            </div>
+            <div class="bottom_area_2">
+                <div class="memo_box red">
+                    <p> 
+                        멀어진 우리 거리만큼</br>
+                        내 삶과 더 가까워져서</br>
+                        뚫어져라 나만 보다</br>
+                        오늘은 마침내 관통했나 봐
+                    </p>
+                    <div class="song_info">
+                        <div class="album_img">
+                            <img src="https://musicmeta-phinf.pstatic.net/album/005/880/5880633.jpg?type=r204Fll&v=202211022301">
+                        </div>
+                        <div class="album_txt">
+                            <p>다정히 내 이름을 부르면</p>
+                            <p>경서예지</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memo_box blue">
+                    <p> 
+                        끝없이 별빛이 내리던 </br>
+                        밤 기분 좋은 바람이 두 뺨</br>
+                        을 스치고 새벽 바다 한곳을 보는</br>
+                        아름다운 너와 나 그림을 그려갔어
+                    </p>
+                    <div class="song_info">
+                        <div class="album_img">
+                            <img src="https://musicmeta-phinf.pstatic.net/album/002/791/2791715.jpg?type=r204Fll&v=202211022301">
+                        </div>
+                        <div class="album_txt">
+                            <p>그때가 좋았어</p>
+                            <p>케이시</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memo_box purple">
+                    <p> 
+                        이젠 내가 편하니 작은 설렘조차</br>
+                        욕심이겠지 항상 곁에 있어서 계속 함께</br>
+                        있을 줄 알았나 봐 음 </br>
+                        반복되는 시간에 지쳐가 더 이상
+                    </p>
+                    <div class="song_info">
+                        <div class="album_img">
+                            <img src="https://musicmeta-phinf.pstatic.net/album/008/164/8164159.jpg?type=r204Fll&v=202211022301">
+                        </div>
+                        <div class="album_txt">
+                            <p>늘..(Waiting..)</p>
+                            <p>벤</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memo_box yellow">
+                    <p> 
+                        우리 얼마 만인가요</br>
+                        참 오랜 시간이 흘렀네요 왜 자꾸</br>
+                        내 맘이 아픈 건지 왜 그리 아파하나요</br>
+                        혹시라도 힘든 일 있었나요
+                    </p>
+                    <div class="song_info">
+                        <div class="album_img">
+                            <img src="https://musicmeta-phinf.pstatic.net/album/003/406/3406157.jpg?type=r204Fll&v=202211022301">
+                        </div>
+                        <div class="album_txt">
+                            <p>늦은 밤 너의 집 앞 골목 길에서</p>
+                            <p>노을</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memo_box green">
+                    <p> 
+                        오래되었어 그때 너의 웃음</br>
+                        너의 목소리 잊혀진거 같아</br>
+                        시간의 위로 그 말의 의미를 이젠 알아</br>
+                        아픈 니 애기도 적당히 할 수 있어
+                    </p>
+                    <div class="song_info">
+                        <div class="album_img">
+                            <img src="https://musicmeta-phinf.pstatic.net/album/001/692/1692530.jpg?type=r204Fll&v=202211022301">
+                        </div>
+                        <div class="album_txt">
+                            <p>데리러 갈게</p>
+                            <p>스탠딩 에그(Standing Egg)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="footer :: footer"></footer>
+    </div>
+    </body>
+    <script type="text/javascript" th:src="@{/js/deploy-config/deploy.js}"></script>
+    <script type="text/javascript" th:src="@{/js/info.js}"></script>
+    <script type="text/javascript" th:src="@{/js/footer.js}"></script>
+</html>
