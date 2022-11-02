@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+ser-agent:Twitterbot
+User-agent:Googlebot
+User-agent:Yeti
+User-agent:Daumoa
+User-agent:Applebot
+Allow:/

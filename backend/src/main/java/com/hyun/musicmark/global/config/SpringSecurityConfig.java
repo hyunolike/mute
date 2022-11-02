@@ -81,7 +81,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .xssProtection();
         http
                 .authorizeRequests()
-                .mvcMatchers("/", "login").permitAll()
+                .mvcMatchers("login", "robots.txt").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .oauth2Login().loginPage("/login")

@@ -2,6 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="가사를 쉽게 간직하고 공유, Mute 음악 감상이 쉬워진다! Mute를 통해 쉽게 가사를 기록하고 음악을 감상해보세요 ">
+    <meta name="keywords" content="음악, 가사, 공유, 음악 감상">
+
+    <meta property="og:type" content="website">
+    <!--  TODO: 배포 사이트 주소로 변경 필요  -->
+    <meta property="og:url" content="https://example.com/page.html">
+    <meta property="og:title" content="Mute 음악 감상이 쉬워진다!">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/61215550/199252319-b758849c-32b4-4f93-9885-5d8fd5d99a66.png">
+    <meta property="og:description" content="가사를 쉽게 간직하고 공유, Mute 음악 감상이 쉬워진다! Mute를 통해 쉽게 가사를 기록하고 음악을 감상해보세요">
+    <meta property="og:site_name" content="Mute">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,
   maximum-scale=1.0, minimum-scale=1.0">
     <title>Mute</title>
@@ -12,6 +23,8 @@
     <link th:href="@{/css/search-result.css}" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <!--  TODO: SWYG Script  -->
+    <script defer src="https://cdn.swygbro.com/public/widget/swyg-widget.js"></script>
 </head>
 <body>
 <div class="main">
