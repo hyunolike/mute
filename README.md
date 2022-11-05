@@ -20,9 +20,35 @@
 Mute가 음악 감상을 더 즐겁고, 가사들을 쉽게 기억할 수 있도록 도와줄게요 🎉
 
 ### 💻 서비스 이용을 보다 쉽게
-### ✍️ 기록을 한번에 모아서 보자 !
+<p align="center">
+  <img width="450" src="https://user-images.githubusercontent.com/61215550/200121881-f4237ca7-1cbf-410c-ba94-270ea6477d76.gif" alt="ezgif com-gi
+f-maker (1)" />
+</p>
+
+### ✍️ 기록을 한번에 모아서 보자
+<p align="center">
+  <img width="450" src="https://user-images.githubusercontent.com/61215550/200122343-71c55879-dd27-4c8d-8f2c-29f7431c7cf5.gif" alt="ezgif com-gi
+f-maker (1)" />
+</p>
+
 ### 🔎 기록할 음악을 찾고 싶어
+<p align="center">
+  <img width="450" src="https://user-images.githubusercontent.com/61215550/200122119-c66b1e5f-6fa5-4338-bfa3-b38c8612047f.gif" alt="ezgif com-gi
+f-maker (1)" />
+</p>
+
 ### 📝 가사를 기록해야지
+<p align="center">
+  <img width="450" src="https://user-images.githubusercontent.com/61215550/200122502-2b744e52-7814-4b63-84e6-9a06a215cacb.gif" alt="ezgif com-gi
+f-maker (1)" />
+</p>
+
+### 🗂️ 폴더로 구분할래
+<p align="center">
+  <img width="450" src="https://user-images.githubusercontent.com/61215550/200122391-bcc51061-8ac9-4050-92c7-b48c6a913435.gif" alt="ezgif com-gi
+f-maker (1)" />
+</p>
+
 ### 😎 친구에게 공유할래 ?
 
 ## 👩‍👦구성원 
